@@ -6,4 +6,4 @@ Pi Network 疑惑アドレス（8,132件）について、グループ分類と�
 - 解析AI: モコ（Muse） / モデル: Muse Spark 1.3
 - 対象リスト: https://github.com/tysseo7/Pi-Thief-Trace/blob/main/findsp2.l_spam.txt
 
-GitHub Pages を有効にすると `moco_pi_thief_trace_report.html` がそのままWebページとして表示され、ページ内のリンクから各種リスト（txt / json）をダウンロードできます。
+GitHub Pages を有効にすると `moco_pi_thief_trace_report.html` がそのままWebページとして表示され、ページ内のリンクから各種リスト（txt / json）を同じ GitHub Pages 上で開けます。
