@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>moco Pi 疑惑アドレス解析レポート（分類＋方向付き・終着点）</title>
+<style>
+body { font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 0; background: #f6f7f9; color: #1a1d21; line-height: 1.7; }
+main { max-width: 980px; margin: 0 auto; padding: 24px 18px 64px; background: #fff; }
+h1 { font-size: 1.5rem; line-height: 1.4; }
+h2 { margin-top: 2.2em; border-bottom: 2px solid #e3e6ea; padding-bottom: .3em; font-size: 1.2rem; }
+h3 { margin-top: 1.6em; font-size: 1.05rem; }
+table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: .86rem; }
+th, td { border: 1px solid #d8dce1; padding: 6px 8px; text-align: left; vertical-align: top; }
+th { background: #f0f2f5; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.addr { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .78rem; word-break: break-all; }
+.meta { background: #f0f2f5; border-radius: 8px; padding: 14px 18px; font-size: .92rem; }
+.meta p { margin: .3em 0; }
+.note { background: #fff8e6; border: 1px solid #f0d98c; border-radius: 8px; padding: 10px 16px; font-size: .9rem; }
+a { color: #0b5cad; }
+.small { font-size: .85rem; color: #555; }
+</style>
+</head>
+<body>
+<main>
+<h1>Pi Network 疑惑アドレス解析レポート<br><span class="small">第1部：グループ分類 ／ 第2部：方向付き解析と終着点（出口・取引所・溜め込み）</span></h1>
+
+<div class="meta">
+<p><strong>解析AI：</strong>モコ（Muse）</p>
+<p><strong>AIモデル名・バージョン：</strong>Muse Spark 1.3（Meta Muse モデルファミリー）</p>
+<p><strong>作成日：</strong>2026年10月31日（解析実施：2026年10月30日〜31日）</p>
+<p><strong>対象リスト（疑惑アドレス一覧）：</strong><a href="https://github.com/tysseo7/Pi-Thief-Trace/blob/main/findsp2.l_spam.txt">https://github.com/tysseo7/Pi-Thief-Trace/blob/main/findsp2.l_spam.txt</a>（8,132 アドレス）</p>
+<p><strong>データソース：</strong>Pi Mainnet Horizon API（https://api.mainnet.minepi.com）</p>
+</div>
+
+<h2>要約</h2>
+<ul>
+<li>疑惑リスト 8,132 件は、リスト内送金でたどると <strong>8,126 件の巨大グループ</strong>、3件の小グループ、独立 3 件に分かれた（第1部）。</li>
+<li>方向付きでは、相互送金の強連結コアは <strong>6,365 件</strong>。入口は少なく（送り出し専用 41 件）、末端の受け取り専用は <strong>1,503 件</strong>あった（第2部）。</li>
+<li>Open Network 開始（2025-02-20）以降、リスト内から外へ <strong>295,373,814 Pi</strong> が流出。最大の到達点は取引所ウォレットで、OKX に 103,624,335 Pi（送金元 2,792 件）が集まった。</li>
+<li>取引所へ直接送るアドレスは 4,464 件と多数だが、金額は上位 100 件で取引所向け総額の 50.8% を占める。</li>
+<li>外に出ず大量に保持したままの溜め込み型終端も存在する（最大 373,298 Pi、出金ゼロ）。</li>
+</ul>
+
+<h2>ダウンロード</h2>
+<table>
+<tr><th>ファイル</th><th>サイズ</th><th>内容</th></tr>
+<tr><td><a href="moco_group_01_8126addr.txt" download>moco_group_01_8126addr.txt</a></td><td>452 KB</td><td>巨大グループ（8,126件）の全アドレス</td></tr>
+<tr><td><a href="moco_group_02_3addr.txt" download>moco_group_02_3addr.txt</a></td><td>0 KB</td><td>小グループ（3件）</td></tr>
+<tr><td><a href="moco_isolated_3addr.txt" download>moco_isolated_3addr.txt</a></td><td>0 KB</td><td>独立アドレス（3件）</td></tr>
+<tr><td><a href="moco_reciprocal_pairs.txt" download>moco_reciprocal_pairs.txt</a></td><td>2544 KB</td><td>双方向ペア 22,853 組</td></tr>
+<tr><td><a href="moco_pure_sinks_1503.txt" download>moco_pure_sinks_1503.txt</a></td><td>127 KB</td><td>受け取り専用アドレス 1,503 件</td></tr>
+<tr><td><a href="moco_exit_senders_top50.txt" download>moco_exit_senders_top50.txt</a></td><td>4 KB</td><td>出口アドレス上位50件（オープン化以降）</td></tr>
+<tr><td><a href="moco_exit_destinations_top50.txt" download>moco_exit_destinations_top50.txt</a></td><td>4 KB</td><td>外部送金先 上位50件（ラベル付き）</td></tr>
+<tr><td><a href="moco_exit_pairs.json" download>moco_exit_pairs.json</a></td><td>9582 KB</td><td>出口ペア完全データ（38,437組）</td></tr>
+<tr><td><a href="moco_exit_by_sender.json" download>moco_exit_by_sender.json</a></td><td>847 KB</td><td>出口アドレス完全集計（5,419件）</td></tr>
+<tr><td><a href="moco_exit_by_destination.json" download>moco_exit_by_destination.json</a></td><td>4472 KB</td><td>外部送金先 完全集計（28,155件）</td></tr>
+<tr><td><a href="moco_directed_metrics.json" download>moco_directed_metrics.json</a></td><td>3490 KB</td><td>方向付き指標（全アドレス）</td></tr>
+</table>
+
+<h2>第1部：グループ分類</h2>
+<h3>方法</h3>
+<ul>
+<li>各アドレスの payments 全履歴を取得（走査総数 5,722,075 件、取得成功 8,131 / 8,132 アカウント）。</li>
+<li>送金元・送金先が両方ともリスト内の payment のみ抽出（自己送金除外、同一 operation の重複は除去）。</li>
+<li>抽出結果：リスト内送金 1,464,362 件、方向付きペア 108,010 組、うち双方向 22,853 組。</li>
+<li>リスト内送金を無向グラフとみて連結成分を計算した。連結は直接ペアだけでなく、A→B→C のような多段の経路でもたどっている。実際、グループ内ペアのうち直接送金があるのは 0.26% で、典型的な最短経路は 3 階層（平均 2.79）だった。</li>
+</ul>
+<h3>結果</h3>
+<h3>グループ1（巨大グループ）：8,126 アドレス</h3>
+<ul>
+<li>1アドレスあたり平均でリスト内 26.6 アドレスと送金関係を持つ。</li>
+<li>最大ハブ：<span class="addr">GCYGA2GHSEXGEWY5AO7JPAJZGKKCSZNAOOTHBXQDCUR6RWT7666IXBKX</span>（リスト内 2,205 ペアに関与）</li>
+<li>最多ペア：<span class="addr">GABGEE3UIGX3RZNWY7TGPWLFKVQOQEBHSZTP3Y65DSAUORYVMOQM5MM3</span> → <span class="addr">GDPYUVUM6MXY5RUAWPTATGVWNT34DSTDNC3J6KGD4EAVW36XTNQALX7N</span>（5,618 件、2022-10-20 〜 2023-01-05）</li>
+</ul>
+<h3>グループ2（小グループ）：3 アドレス</h3>
+<ul>
+<li><span class="addr">GA23OVVVUBQ4GVU57MRPYR5M3J6IWGTYFKZTNOHMGP34WOYQQ2COMVJC</span></li>
+<li><span class="addr">GBA4FSKGHYS5FJI2AXYQAQDHN6J64K5J4HGOCVJRSOMHRSITT6RQXCKR</span></li>
+<li><span class="addr">GCMPYHMMBVXPQTH36ZZY36M3BYD24KGFVB52YBEASKCKYFHUBTZ3DULT</span></li>
+</ul>
+<h3>独立アドレス：3 アドレス</h3>
+<ul>
+<li><span class="addr">GASI5VHBQIAQGCAT5LGZG3AWPSDEHDB2UUGRWVDNOLNTOHJ3RD5HB4KS</span>（全492件確認、リスト内送金 0）</li>
+<li><span class="addr">GBBVVNPSCWICZOEZ3P3BSZAJEB7MZP27QQOU7XALFNDMKNBDFMFUHUIH</span>（全107件確認、リスト内送金 0）</li>
+<li><span class="addr">GDP252PEO7OC2TJOZ34TZ7CPODLQFAKJYT4DQWFXRVEUBSQ3VMPRTYGL</span>（全105件確認、リスト内送金 0）</li>
+</ul>
+
+<h2>第2部：方向付き解析と終着点</h2>
+<h3>方向付きの構造（強連結成分）</h3>
+<ul>
+<li>強連結成分（SCC）総数：1,708 個。最大は相互送金の攪拌コア 6,365 件。</li>
+<li>入口側成分 46 個／送り出し専用アドレス 41 件。</li>
+<li>出口側成分（sink SCC）1,536 個／リスト内で受け取るだけのアドレス 1,503 件。</li>
+<li>構造は「少数の入口 → 6,365 件の攪拌コア → 1,500 以上の末端」。</li>
+</ul>
+
+<h3>出口スキャン（2025-02-20T08:00Z 以降、リスト外への native 送金）</h3>
+<p>疑惑アドレスの活動は Open Network 以前が中心であり、オープン化後に資金が外へ出たはずだという前提で、全 8,132 件についてオープン化以降の支払いだけを走査した（エラー 0 件、HTTP 429 なし）。</p>
+<ul>
+<li>出口として動いたリスト内アドレス：5,419 件</li>
+<li>外部の送金先：28,155 件</li>
+<li>送金総数：678,353 件／総額 <strong>295,373,814 Pi</strong></li>
+</ul>
+<h3>上位の外部送金先（最終到達点候補）</h3>
+<table>
+<tr><th>#</th><th>外部アドレス</th><th>受取額 (Pi)</th><th>送金元数</th><th>受取回数</th><th>素性</th></tr>
+<tr><td>1</td><td><span class="addr">GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU</span></td><td class="num">103,624,335</td><td class="num">2,792</td><td class="num">39,555</td><td>OKX（外部調査報告・報道）</td></tr>
+<tr><td>2</td><td><span class="addr">GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW</span></td><td class="num">42,711,375</td><td class="num">1,229</td><td class="num">15,850</td><td>Gate.io 関連の可能性</td></tr>
+<tr><td>3</td><td><span class="addr">GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75</span></td><td class="num">18,332,536</td><td class="num">1,056</td><td class="num">13,355</td><td>Bitget（外部調査報告）</td></tr>
+<tr><td>4</td><td><span class="addr">GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722</span></td><td class="num">17,550,012</td><td class="num">3</td><td class="num">212</td><td>不明</td></tr>
+<tr><td>5</td><td><span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span></td><td class="num">13,821,491</td><td class="num">3</td><td class="num">587</td><td>不明</td></tr>
+<tr><td>6</td><td><span class="addr">GDIOBGWJZC7CZW32J3GAYUZGYGI5X3MK3O2W5KPF2OUPHCX3ZOYLLD24</span></td><td class="num">12,902,653</td><td class="num">1</td><td class="num">108</td><td>不明</td></tr>
+<tr><td>7</td><td><span class="addr">GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73</span></td><td class="num">10,883,653</td><td class="num">756</td><td class="num">7,728</td><td>MEXC（外部調査報告）</td></tr>
+<tr><td>8</td><td><span class="addr">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span></td><td class="num">6,539,051</td><td class="num">11</td><td class="num">79</td><td>不明</td></tr>
+<tr><td>9</td><td><span class="addr">GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F</span></td><td class="num">5,000,000</td><td class="num">1</td><td class="num">3</td><td>不明</td></tr>
+<tr><td>10</td><td><span class="addr">GD24QVE4R42E4XRDF6T5IN6UAQLD2WN7OQGUC2FBHFUUZM7GLE4KG6YA</span></td><td class="num">1,054,208</td><td class="num">96</td><td class="num">485</td><td>不明</td></tr>
+<tr><td>11</td><td><span class="addr">GARYRU6FPGLPSQPVZIKHSDMDPFUFMARWQB2FQTEL2NJQU4VDDCAPWROY</span></td><td class="num">1,000,100</td><td class="num">1</td><td class="num">2</td><td>不明</td></tr>
+<tr><td>12</td><td><span class="addr">GC3KQK3PJWRJDRIL2PNRMSYEM5YVP545HGVYGLGSAQBN35RIIRP4PGSI</span></td><td class="num">871,957</td><td class="num">5</td><td class="num">241</td><td>不明</td></tr>
+<tr><td>13</td><td><span class="addr">GCVPLCHFAZFO6MSW6CWLGDUTXASYP7G4W7KQ3H6FPHYBSLYRRUNBEKHT</span></td><td class="num">634,262</td><td class="num">1</td><td class="num">12</td><td>不明</td></tr>
+<tr><td>14</td><td><span class="addr">GC4D4NSMEIZD4CEP7QUVS3TNZLNMLGSBIUNAOX2MS7VY2CS2WXFZXPHP</span></td><td class="num">627,922</td><td class="num">1</td><td class="num">11</td><td>不明</td></tr>
+<tr><td>15</td><td><span class="addr">GCVPDTCX42QDHKOHFS2NLNDYGEYK5D42O4LSXUSCLEZYQSWFOVQHBJTD</span></td><td class="num">595,403</td><td class="num">1</td><td class="num">18</td><td>不明</td></tr>
+</table>
+<p>上位4先で流出総額の 61.7%。判明分は大手取引所のウォレットで、出口の動きは早いものでオープン化当日（開始約5時間後）から始まっている。取引所ラベルは第三者の調査報告（BWX8 調査レポート）や報道に基づくもので、取引所公式の公表ではない。</p>
+<h3>素性不明の集約先</h3>
+<ul>
+<li><span class="addr">GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722</span>：17,550,012 Pi のほぼ全額が単一の送金元 <span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span> から（209回、2025-02-23〜2026-10-26）。</li>
+<li><span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span>：13,821,491 Pi のうち 13,801,320 Pi が最大ハブ <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> から（585回）。</li>
+</ul>
+<h3>上位の出口アドレス（リスト内）</h3>
+<table>
+<tr><th>#</th><th>アドレス</th><th>送金額 (Pi)</th><th>送金先数</th><th>送金回数</th></tr>
+<tr><td>1</td><td><span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span></td><td class="num">20,338,945</td><td class="num">5</td><td class="num">613</td></tr>
+<tr><td>2</td><td><span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span></td><td class="num">17,550,000</td><td class="num">1</td><td class="num">209</td></tr>
+<tr><td>3</td><td><span class="addr">GBKTDITOCN3XWVOOXBCQJCYJT3DZZ6BBWDZXZ62DI5ONRMM7UZTI7QXV</span></td><td class="num">16,664,813</td><td class="num">1,818</td><td class="num">15,633</td></tr>
+<tr><td>4</td><td><span class="addr">GADWXCSXPA7NT43FGGBY5TRQYANVQD7C5KPBXHRN3SNIUXGC45U2VKWG</span></td><td class="num">11,522,127</td><td class="num">3</td><td class="num">373</td></tr>
+<tr><td>5</td><td><span class="addr">GCMFINMWAET7KBD56E6XOQPHUBFXX4ZRYFSALP5VPBBNAUYLMU5SL4TU</span></td><td class="num">6,221,457</td><td class="num">519</td><td class="num">1,872</td></tr>
+<tr><td>6</td><td><span class="addr">GANR2MWRM734P7L2LELK4FOYRZK3H2B6UEMVA6FIJFXIFA6GHQOWLZ25</span></td><td class="num">5,000,000</td><td class="num">1</td><td class="num">3</td></tr>
+<tr><td>7</td><td><span class="addr">GDS6BPV3EWPKTE7KKCOBR53ZYKE7PXPNM4EWA4QMINZ4PXWDXZDVWGEG</span></td><td class="num">4,608,358</td><td class="num">4</td><td class="num">306</td></tr>
+<tr><td>8</td><td><span class="addr">GB4NE6W5A55TTBPKLRC3QOQAPPXKQWAQASQL5CQVFU77C2B6KNLOKSPI</span></td><td class="num">3,842,607</td><td class="num">1</td><td class="num">82</td></tr>
+<tr><td>9</td><td><span class="addr">GAMJ32VIM5PS5UBFDX6TNYH2TSDXOLW5KKW5M2LFS54J7EXEP5KRFRJT</span></td><td class="num">2,779,225</td><td class="num">4</td><td class="num">19</td></tr>
+<tr><td>10</td><td><span class="addr">GDVTLNOAPBYRLASOBQ2GDC3F4X36DZNGHDR2X7KX6XDGSX3YEQZ6LPYS</span></td><td class="num">2,626,504</td><td class="num">4</td><td class="num">710</td></tr>
+<tr><td>11</td><td><span class="addr">GDH3SINMG4A4FHP6R27OSPMQBKITR2F2MEN36KVSD7DNLNNRSFY4RGTZ</span></td><td class="num">2,565,153</td><td class="num">88</td><td class="num">216</td></tr>
+<tr><td>12</td><td><span class="addr">GD4P3XTVAJ6DEGI22IPMCDDOQL2MFPO42SLOK3XQII7GJLDQMCUDAR25</span></td><td class="num">2,402,849</td><td class="num">39</td><td class="num">447</td></tr>
+<tr><td>13</td><td><span class="addr">GAIT3UVFAE4FFCTRPTHNI5PGRDSN2NDQGQOUXVWTYWC2DSGLWMRMYGEF</span></td><td class="num">2,384,188</td><td class="num">1</td><td class="num">107</td></tr>
+<tr><td>14</td><td><span class="addr">GBSUS3FJNXJQSVW6V3E323EDAUEBG76CR4NS65PCNMST2F3XUWXBDBHB</span></td><td class="num">2,301,260</td><td class="num">1</td><td class="num">159</td></tr>
+<tr><td>15</td><td><span class="addr">GDZ6KNUHRKTA6JMKXBRJOYHT3CJBUY6HTRG3FZLJC6OBZYN3SK2ET4SB</span></td><td class="num">2,144,670</td><td class="num">3</td><td class="num">45</td></tr>
+</table>
+<h3>取引所へ送るアドレスの数</h3>
+<ul>
+<li>判明した4取引所（OKX／Gate系／Bitget／MEXC）へ直接送った疑惑アドレス：<strong>4,464 件</strong>（OKX 2,792 件、Gate系 1,229 件、Bitget 1,056 件、MEXC 756 件、重複除く）。</li>
+<li>1,091 件が2つ以上の取引所を使い、47 件は4つ全部に送っていた。</li>
+<li>ただし金額は集中している：4取引所向け総額 175,551,899 Pi のうち上位100件の送金元で 50.8%、上位500件で 82.1%。100万 Pi 以上送ったのは 19 件。送金元の中央値は 3,321 Pi。</li>
+</ul>
+<h3>溜め込み型の終着点（外に出ていないもの）</h3>
+<table>
+<tr><th>アドレス</th><th>受入総額 (Pi)</th><th>出金</th><th>現在残高 (Pi)</th></tr>
+<tr><td><span class="addr">GDPPSQOYMLVWGSRCOKDAY2P57QHQXXCFMUUMZSTYHBWYXQ3VZG74BUJK</span></td><td class="num">373,284</td><td>0 件</td><td class="num">373,298</td></tr>
+<tr><td><span class="addr">GA7HY7JCZXIK6T4MHMKEW2EKTQ4LYTRX3OGTVHFLOXPRZUD77V56CYZY</span></td><td class="num">267,999</td><td>0 件</td><td class="num">268,141</td></tr>
+<tr><td><span class="addr">GC2YY746MHVYZ6WNCJ4KQCQWLZPKGDKQCDQ67N22ZAMJV64R3BZWZMHD</span></td><td class="num">396,342</td><td>4 件</td><td class="num">96,364</td></tr>
+<tr><td><span class="addr">GBRGJJLLNUKRDX7BHONUK2U3P73GVXVYE5ERNLYIPDUZIOMSDJ4TICYC</span></td><td class="num">92,564</td><td>2 件</td><td class="num">88,604</td></tr>
+<tr><td><span class="addr">GCNATGQNE46TDRJVPMRWL2ISXB4QZIQHCOAWYKLUUVAPLHT2NDQFVLWP</span></td><td class="num">32,132</td><td>7 件</td><td class="num">28,002</td></tr>
+</table>
+<p>一方、最大ハブ <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> は全期間で入金・出金とも約 4,726 万 Pi の通過点であり（残高 2,923 Pi）、溜め込みではない。「リスト内で受け取り専用＝終着点」とは限らない。</p>
+
+<h2>限界・注意</h2>
+<div class="note">
+<ul>
+<li>第1部の分類で取得できなかった1アカウント（<span class="addr">GCWY2CAUXY3DTFINS7B7B2PNJJVSLAPLBZBXXOOLQ3FF6OWB6I5BTP4S</span>）は相手側の履歴からグループ1所属を確認済みで、判定への影響はない。</li>
+<li>67 アカウントは payments が 20,200 件を超え古い順で打ち切った。影響はグループ1内部の件数の過小評価のみで、グループ分割や独立判定には影響しない。</li>
+<li>第1部では金額合計を出していない（資産種別を区別せず集計したため）。第2部の金額は native（Pi）のみで集計している。</li>
+<li>出口スキャンは「リスト内→リスト外」の native 送金のみ。外部の第2段階の移動や、オープン化前のリスト外送金は含まない。</li>
+<li>流出総額には疑惑リスト内の通常利用者の売却等が混ざり得る。全額が不正資金という意味ではない。</li>
+<li>オンチェーンの資金流だけでは、保有者の特定や窃盗の事実を断定することはできない。本レポートは資金のつながりと行き先の可能性を示すものである。</li>
+</ul>
+</div>
+
+<p class="small">生成：モコ（Muse）／ Muse Spark 1.3 ・ 対象リスト：https://github.com/tysseo7/Pi-Thief-Trace/blob/main/findsp2.l_spam.txt</p>
+</main>
+</body>
+</html>
