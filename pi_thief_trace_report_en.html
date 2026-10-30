@@ -10,11 +10,12 @@ main { max-width: 980px; margin: 0 auto; padding: 24px 18px 64px; background: #f
 h1 { font-size: 1.5rem; line-height: 1.4; }
 h2 { margin-top: 2.2em; border-bottom: 2px solid #e3e6ea; padding-bottom: .3em; font-size: 1.2rem; }
 h3 { margin-top: 1.6em; font-size: 1.05rem; }
-table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: .86rem; }
+.tw { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; min-width: 700px; margin: 1em 0; font-size: .86rem; }
 th, td { border: 1px solid #d8dce1; padding: 6px 8px; text-align: left; vertical-align: top; }
 th { background: #f0f2f5; }
 td.num { text-align: right; font-variant-numeric: tabular-nums; }
-.addr { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .78rem; word-break: break-all; }
+.addr { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .78rem; word-break: break-all; display: block; min-width: 17ch; }
 .meta { background: #f0f2f5; border-radius: 8px; padding: 14px 18px; font-size: .92rem; }
 .meta p { margin: .3em 0; }
 .note { background: #fff8e6; border: 1px solid #f0d98c; border-radius: 8px; padding: 10px 16px; font-size: .9rem; }
@@ -56,7 +57,7 @@ a { color: #0b5cad; }
 
 <h2>Related files (links to GitHub Pages)</h2>
 <p>Each link points directly to a file hosted on the same GitHub Pages site as this report. Clicking a link opens the file in the browser.</p>
-<table>
+<div class="tw"><table>
 <tr><th>File</th><th>Size</th><th>Contents</th></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/group_01_8126addr.txt" target="_blank" rel="noopener">group_01_8126addr.txt</a></td><td>452 KB</td><td>All addresses of the giant group (8,126)</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/group_02_3addr.txt" target="_blank" rel="noopener">group_02_3addr.txt</a></td><td>0 KB</td><td>Small group (3 addresses)</td></tr>
@@ -69,7 +70,7 @@ a { color: #0b5cad; }
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/exit_by_sender.json" target="_blank" rel="noopener">exit_by_sender.json</a></td><td>847 KB</td><td>Complete exit-sender aggregation (5,419)</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/exit_by_destination.json" target="_blank" rel="noopener">exit_by_destination.json</a></td><td>4472 KB</td><td>Complete external-destination aggregation (28,155)</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/directed_metrics.json" target="_blank" rel="noopener">directed_metrics.json</a></td><td>3490 KB</td><td>Directed metrics (all addresses)</td></tr>
-</table>
+</table></div>
 
 <h2>Part 1: Group classification</h2>
 <h3>Method</h3>
@@ -107,7 +108,7 @@ a { color: #0b5cad; }
 <li>Total transfers: 678,353, amounting to <strong>295,373,814 Pi</strong></li>
 </ul>
 <h3>Top external destinations (final-destination candidates)</h3>
-<table>
+<div class="tw"><table>
 <tr><th>#</th><th>External address</th><th>Received (Pi)</th><th>Senders</th><th>Transfers</th><th>Identity</th></tr>
 <tr><td>1</td><td><span class="addr">GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU</span></td><td class="num">103,624,335</td><td class="num">2,792</td><td class="num">39,555</td><td>OKX (third-party investigation report / news)</td></tr>
 <tr><td>2</td><td><span class="addr">GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW</span></td><td class="num">42,711,375</td><td class="num">1,229</td><td class="num">15,850</td><td>Possibly Gate.io related</td></tr>
@@ -124,7 +125,7 @@ a { color: #0b5cad; }
 <tr><td>13</td><td><span class="addr">GCVPLCHFAZFO6MSW6CWLGDUTXASYP7G4W7KQ3H6FPHYBSLYRRUNBEKHT</span></td><td class="num">634,262</td><td class="num">1</td><td class="num">12</td><td>Unknown</td></tr>
 <tr><td>14</td><td><span class="addr">GC4D4NSMEIZD4CEP7QUVS3TNZLNMLGSBIUNAOX2MS7VY2CS2WXFZXPHP</span></td><td class="num">627,922</td><td class="num">1</td><td class="num">11</td><td>Unknown</td></tr>
 <tr><td>15</td><td><span class="addr">GCVPDTCX42QDHKOHFS2NLNDYGEYK5D42O4LSXUSCLEZYQSWFOVQHBJTD</span></td><td class="num">595,403</td><td class="num">1</td><td class="num">18</td><td>Unknown</td></tr>
-</table>
+</table></div>
 <p>The top 4 destinations account for 61.7% of all outflows. The identified ones are major exchange wallets, and the earliest exits began on launch day itself (about 5 hours after the Open Network started). Exchange labels are based on a third-party investigation report (the BWX8 report) and news coverage, not on official exchange announcements.</p>
 <h3>Unidentified consolidation destinations</h3>
 <ul>
@@ -132,7 +133,7 @@ a { color: #0b5cad; }
 <li><span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span>: 13,801,320 Pi of its 13,821,491 Pi came from the largest hub, <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> (585 transfers).</li>
 </ul>
 <h3>Top exit addresses (within the list)</h3>
-<table>
+<div class="tw"><table>
 <tr><th>#</th><th>Address</th><th>Sent (Pi)</th><th>Destinations</th><th>Transfers</th></tr>
 <tr><td>1</td><td><span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span></td><td class="num">20,338,945</td><td class="num">5</td><td class="num">613</td></tr>
 <tr><td>2</td><td><span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span></td><td class="num">17,550,000</td><td class="num">1</td><td class="num">209</td></tr>
@@ -149,7 +150,7 @@ a { color: #0b5cad; }
 <tr><td>13</td><td><span class="addr">GAIT3UVFAE4FFCTRPTHNI5PGRDSN2NDQGQOUXVWTYWC2DSGLWMRMYGEF</span></td><td class="num">2,384,188</td><td class="num">1</td><td class="num">107</td></tr>
 <tr><td>14</td><td><span class="addr">GBSUS3FJNXJQSVW6V3E323EDAUEBG76CR4NS65PCNMST2F3XUWXBDBHB</span></td><td class="num">2,301,260</td><td class="num">1</td><td class="num">159</td></tr>
 <tr><td>15</td><td><span class="addr">GDZ6KNUHRKTA6JMKXBRJOYHT3CJBUY6HTRG3FZLJC6OBZYN3SK2ET4SB</span></td><td class="num">2,144,670</td><td class="num">3</td><td class="num">45</td></tr>
-</table>
+</table></div>
 <h3>How many addresses send to exchanges?</h3>
 <ul>
 <li>Listed addresses that sent directly to the four identified exchanges (OKX / Gate-linked / Bitget / MEXC): <strong>4,464</strong> in total (OKX 2,792; Gate-linked 1,229; Bitget 1,056; MEXC 756; duplicates removed).</li>
@@ -157,14 +158,14 @@ a { color: #0b5cad; }
 <li>Amounts, however, are concentrated: of the 175,551,899 Pi sent to these exchanges, the top 100 senders account for 50.8% and the top 500 for 82.1%. Only 19 addresses sent 1,000,000 Pi or more. The median sender sent just 3,321 Pi.</li>
 </ul>
 <h3>Hoarding-type terminal addresses (funds never moved out)</h3>
-<table>
+<div class="tw"><table>
 <tr><th>Address</th><th>Total received (Pi)</th><th>Outflows</th><th>Current balance (Pi)</th></tr>
 <tr><td><span class="addr">GDPPSQOYMLVWGSRCOKDAY2P57QHQXXCFMUUMZSTYHBWYXQ3VZG74BUJK</span></td><td class="num">373,284</td><td>0</td><td class="num">373,298</td></tr>
 <tr><td><span class="addr">GA7HY7JCZXIK6T4MHMKEW2EKTQ4LYTRX3OGTVHFLOXPRZUD77V56CYZY</span></td><td class="num">267,999</td><td>0</td><td class="num">268,141</td></tr>
 <tr><td><span class="addr">GC2YY746MHVYZ6WNCJ4KQCQWLZPKGDKQCDQ67N22ZAMJV64R3BZWZMHD</span></td><td class="num">396,342</td><td>4</td><td class="num">96,364</td></tr>
 <tr><td><span class="addr">GBRGJJLLNUKRDX7BHONUK2U3P73GVXVYE5ERNLYIPDUZIOMSDJ4TICYC</span></td><td class="num">92,564</td><td>2</td><td class="num">88,604</td></tr>
 <tr><td><span class="addr">GCNATGQNE46TDRJVPMRWL2ISXB4QZIQHCOAWYKLUUVAPLHT2NDQFVLWP</span></td><td class="num">32,132</td><td>7</td><td class="num">28,002</td></tr>
-</table>
+</table></div>
 <p>By contrast, the largest hub <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> is a pass-through, not a hoard: about 47.26 million Pi flowed in and the same amount flowed out over its lifetime, leaving a balance of only 2,923 Pi. An address that only receives within the list is therefore not necessarily a terminal point.</p>
 
 <h2>Limitations</h2>
