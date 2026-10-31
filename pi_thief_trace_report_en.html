@@ -60,6 +60,25 @@ a { color: #0b5cad; }
 </ol>
 <p>In other words, the list is the set of addresses that received funds sent within 3 minutes of a migration lockup release. The timing condition is designed to capture drainer-style receipts that target the moment of unlock, rather than coincidental ordinary transfers.</p>
 
+
+<h2>Basis for the two hub labels</h2>
+<p>This report refers to the two largest hubs in the list as "pi chain mall" and "teltlk". The basis for those attributions is set out here. A label shows only that the business itself has publicly stated the wallet is theirs; it does not by itself prove that the operator directed every flow. Because source pages can be deleted or changed, a preserved copy of each source (PDF, plus an image of its first page) is hosted on this site.</p>
+<h3>pi chain mall — <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span></h3>
+<ul>
+<li>The official documentation of PiChain Global (GitBook, "PCM mainnet address", <a href="https://pichain-global.gitbook.io/pichainmall/pcm-mainnet-address/pcm-mainnet-address" target="_blank" rel="noopener">https://pichain-global.gitbook.io/pichainmall/pcm-mainnet-address/pcm-mainnet-address</a>) states that PCM distributes its Pi across three mainnet wallets: Wallet 1 is this address, <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span>; Wallet 2 is <span class="addr">GB7BHOTZXZXMSV7E22VAORD5PLOP7LMPKU2LO46DY27452PRQWSPRF67</span>; and Wallet 3 (for Pi withdrawal) is <span class="addr">GDUPXUGENG2YCX4BVYKS3LH4N4UT7BTYPMBOS5UCVTAX2E5IZ6VYLC4L</span>.</li>
+<li>Cross-checked against the 8,132-address suspect list: Wallet 1 and Wallet 2 <strong>are in the list</strong>; Wallet 3 is not. In addition, the mainnet wallet address that the pi chain mall wallet (@pichainmall) publicly announced on X on 1 October 2022 ("Our mainnet wallet address is …"), <span class="addr">GBCRZX73YTPTA7HSHVXNXYGJCUUKVUQMASELPXZ5WQVDUT7RLINS6N3Y</span>, as quoted by Newsway, <strong>is also in the list</strong>. So 3 of the 4 publicly known PCM wallets are members of the suspect list.</li>
+<li>An honest note: an X post by pi chain mall naming GDGV… specifically could not be retrieved during this check. The attribution of this address rests on PCM's own official documentation above.</li>
+</ul>
+<p><img src="evidence_pcm_gitbook.png" alt="Preserved image of the PiChain Global documentation page 'PCM mainnet address'" style="max-width:100%;border:1px solid #d8dce1"></p>
+<p class="small">Preserved copy of the source (PDF): <a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_pcm_gitbook.pdf" target="_blank" rel="noopener">evidence_pcm_gitbook.pdf</a></p>
+<h3>teltlk — <span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span></h3>
+<ul>
+<li>A Binance Square article (27 May 2024; republishing Beritabulukumba.com, Indonesia), "Regarding Alleged Pi Wallet Freezing, Teltlk International Urges Pi Network" (<a href="https://www.binance.com/en/square/post/8676920705321" target="_blank" rel="noopener">https://www.binance.com/en/square/post/8676920705321</a>), reports that Teltlk confirmed all of its users' Pi assets are stored on the Pi network at this wallet address, <span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span>. The statement was made in the context of a withdrawal failure that was reported to the Pi Core Team on 23 May 2024.</li>
+<li>Supporting context: teltlk's own X post claiming this address has since been deleted (per the list creator). Coverage in May 2024 (HokaNews / CoinGabbar) reported Teltlk's announcement that it held more than 18 million Pi, without printing the address.</li>
+</ul>
+<p><img src="evidence_teltlk_binance.png" alt="Preserved image of the Binance Square article on Teltlk's wallet statement" style="max-width:100%;border:1px solid #d8dce1"></p>
+<p class="small">Preserved copy of the source (PDF): <a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_teltlk_binance.pdf" target="_blank" rel="noopener">evidence_teltlk_binance.pdf</a></p>
+
 <h2>Related files (links to GitHub Pages)</h2>
 <p>Each link points directly to a file hosted on the same GitHub Pages site as this report. Clicking a link opens the file in the browser.</p>
 <div class="tw"><table>
@@ -81,6 +100,8 @@ a { color: #0b5cad; }
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/third_hop_summary.txt" target="_blank" rel="noopener">third_hop_summary.txt</a></td><td>6 KB</td><td>Third-hop tracing summary (text)</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/victim_hop.json" target="_blank" rel="noopener">victim_hop.json</a></td><td>12 KB</td><td>Victim-hop verification data (21,141 non-list senders, original 3 conditions + effects)</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/victim_hop_summary.txt" target="_blank" rel="noopener">victim_hop_summary.txt</a></td><td>6 KB</td><td>Victim-hop verification summary (text)</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_pcm_gitbook.pdf" target="_blank" rel="noopener">evidence_pcm_gitbook.pdf</a></td><td>77 KB</td><td>Basis for the pi chain mall label: preserved copy of the official documentation page 'PCM mainnet address' (PDF)</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_teltlk_binance.pdf" target="_blank" rel="noopener">evidence_teltlk_binance.pdf</a></td><td>761 KB</td><td>Basis for the teltlk label: preserved copy of the Binance Square article (PDF)</td></tr>
 </table></div>
 
 <h2>Part 1: Group classification</h2>
