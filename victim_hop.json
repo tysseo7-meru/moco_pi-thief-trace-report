@@ -1,0 +1,348 @@
+{
+ "method_notes": {
+  "type_i_51_interpretation": "type_i=51 is claimable_balance_claimant_created. Its predicate {\"not\": {\"rel_before\": SECONDS}} is a Stellar claim predicate: the claimant may claim only when NOT (ledger close time < effect creation + rel_before), i.e. the balance becomes claimable at release_time = effect.created_at + rel_before seconds. Evidence (Step 0 probes): every type-52 claim (claimable_balance_claimed, same balance_id) occurred at or after the computed release_time (e.g. tranche created 2022-09-15 with rel_before=92835410s -> release 2025-08-25T06:42:58Z, claimed 2025-08-25T08:25:48Z; tranche with rel_before=1209600s (14 days) released 2022-09-29, claimed 2022-11-16). Accounts hold multiple type-51 tranches with different rel_before (1209600s, ~92835410s, ...). Condition (c) primary gap uses the tranche whose claim most immediately precedes the send (funds must be claimed before they can be sent); a secondary gap to the latest release_time <= send time among all tranches is also recorded per send.",
+  "balance_reconstruction": "Running native balance from effects in ledger order: type 0 starting_balance, type 2 +amount, type 3 -amount (native only); type-52 claim effects are NOT added (type-2 credits already include claim credits). Transaction fees are subtracted cumulatively using /accounts/{id}/transactions (fee_charged stroops/1e7, only txs with fee_account == sender), up to and including the send transaction. Balance after the first send = running balance right after that send's debit effect minus cumulative fees. Validation: reconstructed final balance vs current /accounts balance matched exactly on one probe account and within 0.03-0.05 Pi on two others; senders whose reconstruction differs by >0.1 Pi are marked unreliable and their condition (b) is 'unknown', never guessed.",
+  "condition_a_definition": "Incoming payment record = /payments record with to == sender, from != sender, type in {payment, path_payment_strict_receive, path_payment_strict_send}. Scan stops at the first incoming record (fail; count is a lower bound). Migration funding via claimable-balance claims does not appear as a payment record, consistent with Akira's original extraction.",
+  "caps": "Step 1 target scans capped at 300,000 records (neither target hit it: PCM 178,965 records, TEL 111,675). Step 2 sender scans capped at 20,200 records (no sender was capped_unknown in the final run). Step 3 effects cap 60,000, transactions cap 20,200 per passer."
+ },
+ "targets": {
+  "PCM": {
+   "target": "GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF",
+   "target_scan": {
+    "total_records": 178965,
+    "scan_capped": false,
+    "incoming_native_ops": 177738,
+    "incoming_native_amount": 47257681.0773
+   },
+   "universe_non_list": {
+    "senders": 18692,
+    "ops_to_target": 127525,
+    "amount_native": 17213512.797,
+    "share_of_target_incoming_native_amount_pct": 36.42,
+    "share_of_target_incoming_native_ops_pct": 71.75
+   },
+   "condition_a": {
+    "pass": {
+     "senders": 3407,
+     "ops_to_target": 6626,
+     "amount_native": 198643.0855
+    },
+    "fail_incoming": {
+     "senders": 15285,
+     "ops_to_target": 120899,
+     "amount_native": 17014869.7115
+    },
+    "other_or_unscanned": {
+     "senders": 0,
+     "ops_to_target": 0,
+     "amount_native": 0
+    },
+    "pass_pct_of_universe_senders": 18.23
+   },
+   "effects_coverage_among_a_passers": {
+    "step3_results": 3407,
+    "with_tranches": 3407,
+    "with_claimed_tranche_before_first_send": 3407,
+    "a_passers_total": 3407
+   },
+   "condition_c_first_send_gap_bands_claimed": {
+    "no_claimed_tranche_before_send": 0,
+    "lt3min": 7,
+    "3to10min": 1,
+    "10to60min": 11,
+    "gt60min": 3388,
+    "negative": 0
+   },
+   "condition_c_first_send_gap_bands_any_release": {
+    "no_claimed_tranche_before_send": 0,
+    "lt3min": 7,
+    "3to10min": 1,
+    "10to60min": 11,
+    "gt60min": 3388,
+    "negative": 0
+   },
+   "c_pass_first_send": {
+    "senders": 7,
+    "ops_to_target": 18,
+    "amount_native": 4852.1968
+   },
+   "condition_b_among_c_passers": {
+    "balance_known": 7,
+    "balance_unknown": 0,
+    "b_pass_lt2pi": 2,
+    "b_fail_gte2pi": 5
+   },
+   "full_matches": {
+    "senders": 2,
+    "first_sends_amount": 1702.02,
+    "total_amount_to_target": 1702.232,
+    "era_split": {
+     "pre_2025_02_20": 0,
+     "post_2025_02_20": 2
+    },
+    "examples": [
+     {
+      "sender": "GARGMMZXT4HNTM6Q3LVB5CREOXGF5NTCBZGNEVOYNLIZ3LRAGIQ3C7CX",
+      "target": "PCM",
+      "first_send_time": "2025-04-01T21:43:20Z",
+      "first_send_amount": 0.02,
+      "total_amount_to_target": 0.232,
+      "ops_to_target": 7,
+      "release_time": "2025-04-01T21:40:50Z",
+      "claim_time": "2025-04-01T21:41:25Z",
+      "tranche_amount": "109.8079417",
+      "gap_seconds": 150.0,
+      "balance_after_first_send": "1.7517668",
+      "era": "post"
+     },
+     {
+      "sender": "GDILWZSPSNDJGQNMIWMKMIZDL7FNNJ7O5B5KNLXC3Y2TRUZHNRRVKLAU",
+      "target": "PCM",
+      "first_send_time": "2025-06-02T02:53:48Z",
+      "first_send_amount": 1702.0,
+      "total_amount_to_target": 1702.0,
+      "ops_to_target": 1,
+      "release_time": "2025-06-02T02:52:57Z",
+      "claim_time": "2025-06-02T02:53:17Z",
+      "tranche_amount": "1533.0021657",
+      "gap_seconds": 51.0,
+      "balance_after_first_send": "1.3057396",
+      "era": "post"
+     }
+    ],
+    "all": [
+     {
+      "sender": "GARGMMZXT4HNTM6Q3LVB5CREOXGF5NTCBZGNEVOYNLIZ3LRAGIQ3C7CX",
+      "target": "PCM",
+      "first_send_time": "2025-04-01T21:43:20Z",
+      "first_send_amount": 0.02,
+      "total_amount_to_target": 0.232,
+      "ops_to_target": 7,
+      "release_time": "2025-04-01T21:40:50Z",
+      "claim_time": "2025-04-01T21:41:25Z",
+      "tranche_amount": "109.8079417",
+      "gap_seconds": 150.0,
+      "balance_after_first_send": "1.7517668",
+      "era": "post"
+     },
+     {
+      "sender": "GDILWZSPSNDJGQNMIWMKMIZDL7FNNJ7O5B5KNLXC3Y2TRUZHNRRVKLAU",
+      "target": "PCM",
+      "first_send_time": "2025-06-02T02:53:48Z",
+      "first_send_amount": 1702.0,
+      "total_amount_to_target": 1702.0,
+      "ops_to_target": 1,
+      "release_time": "2025-06-02T02:52:57Z",
+      "claim_time": "2025-06-02T02:53:17Z",
+      "tranche_amount": "1533.0021657",
+      "gap_seconds": 51.0,
+      "balance_after_first_send": "1.3057396",
+      "era": "post"
+     }
+    ]
+   },
+   "any_send_analysis": {
+    "a_passers_with_any_send_c_lt3min": 10,
+    "later_send_full_match_candidates": [
+     {
+      "sender": "GDQRJHH5TOSKDXFLLEMUAH5INKNVFVXEFK7HFJBTJZOOME74MXSRIRIN",
+      "send_time": "2025-06-20T19:48:40Z",
+      "amount": 800.0,
+      "gap_seconds": 57.0,
+      "balance_after_send": "16.6497811",
+      "balance_status": "ok",
+      "b_pass": false
+     },
+     {
+      "sender": "GCPV4MWKB6PFJH2TNH2QCL3IVI72BZITEE7HJMS5MHAXNY4APJUOTGEC",
+      "send_time": "2025-06-04T07:27:41Z",
+      "amount": 198.0,
+      "gap_seconds": 28.0,
+      "balance_after_send": "2.2269512",
+      "balance_status": "ok",
+      "b_pass": false
+     },
+     {
+      "sender": "GCHFXPWHDUNLSWHJTHWAT2BJNIEV5AIIKF5LR3L2U3VFMFCEASERKZ22",
+      "send_time": "2025-06-27T07:37:26Z",
+      "amount": 59.0,
+      "gap_seconds": 44.0,
+      "balance_after_send": "1.8162930",
+      "balance_status": "ok",
+      "b_pass": true
+     }
+    ],
+    "later_send_full_matches": 1
+   }
+  },
+  "TEL": {
+   "target": "GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE",
+   "target_scan": {
+    "total_records": 111675,
+    "scan_capped": false,
+    "incoming_native_ops": 68579,
+    "incoming_native_amount": 70412195.842
+   },
+   "universe_non_list": {
+    "senders": 2932,
+    "ops_to_target": 26694,
+    "amount_native": 18047562.0835,
+    "share_of_target_incoming_native_amount_pct": 25.63,
+    "share_of_target_incoming_native_ops_pct": 38.92
+   },
+   "condition_a": {
+    "pass": {
+     "senders": 326,
+     "ops_to_target": 456,
+     "amount_native": 82565.568
+    },
+    "fail_incoming": {
+     "senders": 2606,
+     "ops_to_target": 26238,
+     "amount_native": 17964996.5155
+    },
+    "other_or_unscanned": {
+     "senders": 0,
+     "ops_to_target": 0,
+     "amount_native": 0
+    },
+    "pass_pct_of_universe_senders": 11.12
+   },
+   "effects_coverage_among_a_passers": {
+    "step3_results": 326,
+    "with_tranches": 326,
+    "with_claimed_tranche_before_first_send": 326,
+    "a_passers_total": 326
+   },
+   "condition_c_first_send_gap_bands_claimed": {
+    "no_claimed_tranche_before_send": 0,
+    "lt3min": 5,
+    "3to10min": 2,
+    "10to60min": 9,
+    "gt60min": 310,
+    "negative": 0
+   },
+   "condition_c_first_send_gap_bands_any_release": {
+    "no_claimed_tranche_before_send": 0,
+    "lt3min": 5,
+    "3to10min": 2,
+    "10to60min": 9,
+    "gt60min": 310,
+    "negative": 0
+   },
+   "c_pass_first_send": {
+    "senders": 5,
+    "ops_to_target": 6,
+    "amount_native": 1748.5267
+   },
+   "condition_b_among_c_passers": {
+    "balance_known": 5,
+    "balance_unknown": 0,
+    "b_pass_lt2pi": 3,
+    "b_fail_gte2pi": 2
+   },
+   "full_matches": {
+    "senders": 3,
+    "first_sends_amount": 1665.0267,
+    "total_amount_to_target": 1665.0267,
+    "era_split": {
+     "pre_2025_02_20": 1,
+     "post_2025_02_20": 2
+    },
+    "examples": [
+     {
+      "sender": "GCXVSPUPGZB3AYXKJ4IDSJBVJPSV2MOZCYRLTBRB26TB6DKS5BF5KKVA",
+      "target": "TEL",
+      "first_send_time": "2024-09-19T13:25:51Z",
+      "first_send_amount": 666.0,
+      "total_amount_to_target": 666.0,
+      "ops_to_target": 1,
+      "release_time": "2024-09-19T13:25:09Z",
+      "claim_time": "2024-09-19T13:25:31Z",
+      "tranche_amount": "666.2617492",
+      "gap_seconds": 42.0,
+      "balance_after_first_send": "1.2417492",
+      "era": "pre"
+     },
+     {
+      "sender": "GBFBVVFWW53S6IH4QVQAICV4MSF4HTKQQ7MFKH7OFVVUSNGMN5UNLEFX",
+      "target": "TEL",
+      "first_send_time": "2026-05-22T09:07:29Z",
+      "first_send_amount": 115.7,
+      "total_amount_to_target": 115.7,
+      "ops_to_target": 1,
+      "release_time": "2026-05-22T09:06:55Z",
+      "claim_time": "2026-05-22T09:07:09Z",
+      "tranche_amount": "115.8013107",
+      "gap_seconds": 34.0,
+      "balance_after_first_send": "1.0781230",
+      "era": "post"
+     },
+     {
+      "sender": "GBTHBF4377QSZFNYHC3A4IV25LBKXJU3UURYUN724K6RA3ENWGK3OS6P",
+      "target": "TEL",
+      "first_send_time": "2026-08-05T13:55:51Z",
+      "first_send_amount": 883.3267143,
+      "total_amount_to_target": 883.3267,
+      "ops_to_target": 1,
+      "release_time": "2026-08-05T13:55:50Z",
+      "claim_time": "2026-08-05T13:55:51Z",
+      "tranche_amount": "883.3267143",
+      "gap_seconds": 1.0,
+      "balance_after_first_send": "0.9974127",
+      "era": "post"
+     }
+    ],
+    "all": [
+     {
+      "sender": "GCXVSPUPGZB3AYXKJ4IDSJBVJPSV2MOZCYRLTBRB26TB6DKS5BF5KKVA",
+      "target": "TEL",
+      "first_send_time": "2024-09-19T13:25:51Z",
+      "first_send_amount": 666.0,
+      "total_amount_to_target": 666.0,
+      "ops_to_target": 1,
+      "release_time": "2024-09-19T13:25:09Z",
+      "claim_time": "2024-09-19T13:25:31Z",
+      "tranche_amount": "666.2617492",
+      "gap_seconds": 42.0,
+      "balance_after_first_send": "1.2417492",
+      "era": "pre"
+     },
+     {
+      "sender": "GBFBVVFWW53S6IH4QVQAICV4MSF4HTKQQ7MFKH7OFVVUSNGMN5UNLEFX",
+      "target": "TEL",
+      "first_send_time": "2026-05-22T09:07:29Z",
+      "first_send_amount": 115.7,
+      "total_amount_to_target": 115.7,
+      "ops_to_target": 1,
+      "release_time": "2026-05-22T09:06:55Z",
+      "claim_time": "2026-05-22T09:07:09Z",
+      "tranche_amount": "115.8013107",
+      "gap_seconds": 34.0,
+      "balance_after_first_send": "1.0781230",
+      "era": "post"
+     },
+     {
+      "sender": "GBTHBF4377QSZFNYHC3A4IV25LBKXJU3UURYUN724K6RA3ENWGK3OS6P",
+      "target": "TEL",
+      "first_send_time": "2026-08-05T13:55:51Z",
+      "first_send_amount": 883.3267143,
+      "total_amount_to_target": 883.3267,
+      "ops_to_target": 1,
+      "release_time": "2026-08-05T13:55:50Z",
+      "claim_time": "2026-08-05T13:55:51Z",
+      "tranche_amount": "883.3267143",
+      "gap_seconds": 1.0,
+      "balance_after_first_send": "0.9974127",
+      "era": "post"
+     }
+    ]
+   },
+   "any_send_analysis": {
+    "a_passers_with_any_send_c_lt3min": 5,
+    "later_send_full_match_candidates": [],
+    "later_send_full_matches": 0
+   }
+  }
+ }
+}
