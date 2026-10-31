@@ -1,6 +1,6 @@
 # Pi Suspected-Address Analysis Report
 
-Analysis of 8,132 Pi Network suspected addresses: group classification, plus directed and terminal-point (exit / exchange / hoarding) analysis.
+Analysis of 8,132 Pi Network suspected addresses: group classification, plus directed and terminal-point (exit / exchange / hoarding) analysis, plus second-hop tracing of the six largest unknown consolidation destinations beyond the exits and third-hop tracing of GDGII… (Parts 3–4 of the reports).
 
 - Report (Japanese): [pi_thief_trace_report.html](./pi_thief_trace_report.html) — Web: https://tysseo7-meru.github.io/moco_pi-thief-trace-report/pi_thief_trace_report.html
 - Report (English): [pi_thief_trace_report_en.html](./pi_thief_trace_report_en.html) — Web: https://tysseo7-meru.github.io/moco_pi-thief-trace-report/pi_thief_trace_report_en.html
