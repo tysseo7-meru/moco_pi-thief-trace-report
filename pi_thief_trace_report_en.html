@@ -222,17 +222,18 @@ a { color: #0b5cad; }
 <h3>Method: lockup-release times from effects, and balance reconstruction</h3>
 <ul>
 <li>Lockup-release times cannot be obtained from payments, so effects were used. From the <code>rel_before</code> predicate (in seconds) of type_i: 51 effects (claimable_balance_claimant_created), the <strong>release time = the effect's creation time + rel_before seconds</strong>. This reading was verified: for every case checked, the claim of the same balance_id (type_i: 52) occurred at or after the computed release time.</li>
-<li>The conditions are the original three, unchanged: (a) the address has never received any payment; (c) its first send occurred less than 3 minutes after its lockup release; (b) its balance after that send was below 2 Pi.</li>
-<li>Post-send balances were reconstructed by accumulating effects in ledger order and deducting transaction fees. Balances that could not be reconstructed were to be reported as "unknown" rather than guessed; for all senders passing condition (c), the balance was in fact determined (0 unknown).</li>
+<li>The conditions are the original three, unchanged: (a) the address has never received any payment; (b) its first send occurred less than 3 minutes after its lockup release; (c) its balance after that send was below 2 Pi.</li>
+<li>Post-send balances were reconstructed by accumulating effects in ledger order and deducting transaction fees. Balances that could not be reconstructed were to be reported as "unknown" rather than guessed; for all senders passing condition (b), the balance was in fact determined (0 unknown).</li>
 </ul>
+<p>The conditions are applied in stages, layered in the order (a) → (b) → (c); senders satisfying all of them are called (d) full matches.</p>
 <h3>The funnel</h3>
 <div class="tw"><table>
-<tr><th>Target</th><th>Non-list senders (universe)</th><th>(a) No incoming payments ever</th><th>(c) First send &lt;3 min after release</th><th>Full match (first send)</th></tr>
+<tr><th>Target</th><th>Non-list senders (universe)</th><th>(a) No incoming payments ever</th><th>(b) First send &lt;3 min after release</th><th>(d) Full match (first send)</th></tr>
 <tr><td>pi chain mall</td><td class="num">18,692 senders (127,525 payments / 17,213,513 Pi)</td><td class="num">3,407 (18.2%)</td><td class="num">7</td><td class="num">2 (1,702.02 Pi)</td></tr>
 <tr><td>teltlk</td><td class="num">2,932 senders (26,694 payments / 18,047,562 Pi)</td><td class="num">326 (11.1%)</td><td class="num">5</td><td class="num">3 (1,665.03 Pi)</td></tr>
 </table></div>
-<p>Most non-list inflows are of the ordinary kind and fail at (a) (the sender has received payments before); even among the senders passing (a), most sent more than 60 minutes after their release. In addition to the 5 full matches on the first send, one further sender to pi chain mall matched all three conditions on a later send, for a total of 6.</p>
-<h3>The 6 full matches (victim candidates)</h3>
+<p>Most non-list inflows are of the ordinary kind and fail at (a) (the sender has received payments before); even among the senders passing (a), most sent more than 60 minutes after their release. In addition to the 5 (d) full matches on the first send, one further sender to pi chain mall matched all three conditions on a later send, for a total of 6.</p>
+<h3>The 6 (d) full matches (victim candidates)</h3>
 <div class="tw"><table>
 <tr><th>Target</th><th>Sender address</th><th>Date</th><th>Amount (Pi)</th><th>Gap after release (sec)</th><th>Post-send balance (Pi)</th><th>Note</th></tr>
 <tr><td>pi chain mall</td><td><span class="addr">GDILWZSPSNDJGQNMIWMKMIZDL7FNNJ7O5B5KNLXC3Y2TRUZHNRRVKLAU</span></td><td>2025-06-02</td><td class="num">1,702</td><td class="num">51</td><td class="num">1.306</td><td></td></tr>

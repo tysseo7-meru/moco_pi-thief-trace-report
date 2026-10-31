@@ -222,17 +222,18 @@ a { color: #0b5cad; }
 <h3>方法：effects によるロック解除時刻の特定と残高の再構成</h3>
 <ul>
 <li>ロック解除時刻は payments からは取得できないため、effects を使った。type_i: 51（claimable_balance_claimant_created）の述語 <code>rel_before</code>（秒）から、<strong>解除時刻 = effect の作成時刻 + rel_before 秒</strong> と算出する。この解釈は、同一 balance_id に対する請求（type_i: 52）が、検証した全件で算出した解除時刻以降に発生していたことで裏付けた。</li>
-<li>条件は元の3条件そのもの：(a) そのアドレスに受け取り履歴（入金記録）が一度もない、(c) 初回送金がロック解除から3分未満、(b) 送金後の残高が 2 Pi 未満。</li>
-<li>送金後残高は effects を台帳順に積算し、取引手数料を差し引いて再構成した。再構成できないものは「不明」として推測しない設計で、条件(c)の通過者については全員の残高が確定した（不明 0 件）。</li>
+<li>条件は元の3条件そのもの：(a) そのアドレスに受け取り履歴（入金記録）が一度もない、(b) 初回送金がロック解除から3分未満、(c) 送金後の残高が 2 Pi 未満。</li>
+<li>送金後残高は effects を台帳順に積算し、取引手数料を差し引いて再構成した。再構成できないものは「不明」として推測しない設計で、条件(b)の通過者については全員の残高が確定した（不明 0 件）。</li>
 </ul>
+<p>条件は (a)→(b)→(c) の順に段階的に重ねて適用し、すべてを満たした送り元を (d) フルマッチとする。</p>
 <h3>段階別の絞り込み</h3>
 <div class="tw"><table>
-<tr><th>対象</th><th>リスト外送り元（ユニバース）</th><th>(a) 受け取り履歴なし</th><th>(c) 解除から3分未満</th><th>フルマッチ（初回送金）</th></tr>
+<tr><th>対象</th><th>リスト外送り元（ユニバース）</th><th>(a) 受け取り履歴なし</th><th>(b) 解除から3分未満</th><th>(d) フルマッチ（初回送金）</th></tr>
 <tr><td>pi chain mall</td><td class="num">18,692 件（127,525 回／17,213,513 Pi）</td><td class="num">3,407 件（18.2%）</td><td class="num">7 件</td><td class="num">2 件（1,702.02 Pi）</td></tr>
 <tr><td>teltlk</td><td class="num">2,932 件（26,694 回／18,047,562 Pi）</td><td class="num">326 件（11.1%）</td><td class="num">5 件</td><td class="num">3 件（1,665.03 Pi）</td></tr>
 </table></div>
-<p>リスト外入金の大半は (a) で落ちる通常型（受け取り履歴あり）で、(a) を通過した送り元でも大半は解除から60分以上経ってからの送金だった。初回送金のフルマッチ 5 件に加え、pi chain mall では後続の送金で3条件を満たすものが 1 件あり、合計 6 件が確認された。</p>
-<h3>フルマッチ（被害者候補）6 件</h3>
+<p>リスト外入金の大半は (a) で落ちる通常型（受け取り履歴あり）で、(a) を通過した送り元でも大半は解除から60分以上経ってからの送金だった。初回送金の (d) フルマッチ 5 件に加え、pi chain mall では後続の送金で3条件を満たすものが 1 件あり、合計 6 件が確認された。</p>
+<h3>(d) フルマッチ（被害者候補）6 件</h3>
 <div class="tw"><table>
 <tr><th>対象</th><th>送り元アドレス</th><th>日付</th><th>金額 (Pi)</th><th>解除からの間隔（秒）</th><th>送金後残高 (Pi)</th><th>備考</th></tr>
 <tr><td>pi chain mall</td><td><span class="addr">GDILWZSPSNDJGQNMIWMKMIZDL7FNNJ7O5B5KNLXC3Y2TRUZHNRRVKLAU</span></td><td>2025-06-02</td><td class="num">1,702</td><td class="num">51</td><td class="num">1.306</td><td></td></tr>
