@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pi Suspected-Address Analysis Report (Classification + Directed / Terminal Analysis)</title>
+<title>Pi Suspected-Address Analysis Report (Classification + Directed / Terminal Analysis + Second- and Third-Hop Tracing)</title>
 <style>
 body { font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 0; background: #f6f7f9; color: #1a1d21; line-height: 1.7; }
 main { max-width: 980px; margin: 0 auto; padding: 24px 18px 64px; background: #fff; }
@@ -26,12 +26,12 @@ a { color: #0b5cad; }
 </head>
 <body>
 <main>
-<h1>Pi Network Suspected-Address Analysis Report<br><span class="small">Part 1: Group classification / Part 2: Directed analysis and terminal points (exits, exchanges, hoarding)</span></h1>
+<h1>Pi Network Suspected-Address Analysis Report<br><span class="small">Part 1: Group classification / Part 2: Directed analysis and terminal points (exits, exchanges, hoarding) / Part 3: Tracing beyond the exits (second hop) / Part 4: Third hop</span></h1>
 <p class="small">Japanese version: <a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/pi_thief_trace_report.html">pi_thief_trace_report.html</a></p>
 <div class="meta">
 <p><strong>Analysing AI:</strong> Moko (Muse)</p>
 <p><strong>AI model name / version:</strong> Muse Spark 1.3 (Meta Muse model family)</p>
-<p><strong>Date:</strong> 31 October 2026 (analysis run 30-31 October 2026)</p>
+<p><strong>Date:</strong> 31 October 2026 (analysis run 30-31 October 2026; Parts 3 and 4 added on 31 October 2026)</p>
 <p><strong>Target list (suspected addresses):</strong> <a href="https://github.com/tysseo7/Pi-Thief-Trace/blob/main/findsp2.l_spam.txt">https://github.com/tysseo7/Pi-Thief-Trace/blob/main/findsp2.l_spam.txt</a> (8,132 addresses)</p>
 <p><strong>Data source:</strong> Pi Mainnet Horizon API (https://api.mainnet.minepi.com)</p>
 </div>
@@ -43,6 +43,9 @@ a { color: #0b5cad; }
 <li>After the Open Network launch (20 Feb 2025), <strong>295,373,814 Pi</strong> flowed out of the list to external addresses. The largest destination is an exchange wallet: OKX received 103,624,335 Pi from 2,792 listed addresses.</li>
 <li>4,464 listed addresses sent directly to exchanges, but amounts are concentrated: the top 100 senders account for 50.8% of all exchange-bound funds.</li>
 <li>Some terminal addresses never sent funds out at all and still hold large balances (largest: 373,298 Pi, zero outflows).</li>
+<li>Tracing the six largest unknown consolidation destinations beyond the exits over their full histories, the two primary targets (GCQH… and GAL4…) turned out not to hoard funds: they are pass-through points that disperse roughly what they receive in over 100,000 small payments each. The only large retention among the six was GANH…, holding a balance of 7,061,704 Pi (about 54% of its inflows) (Part 3).</li>
+<li>GDIO… sent 99.96% of its payment outflows to exchanges, but a balance gap of about 7.95 million Pi, attributable to claimable balances, means it cannot be concluded that all of its funds reached exchanges (Part 3).</li>
+<li>The largest destination of GCP3, GDGII…, is a general large wallet whose biggest source of funds is OKX itself (about 86% of its inflows), and 88.8% of its outflows went to exchanges. The funds from GCP3 make up only about 1.7% of its inflows, so this branch terminates at the exchanges (Part 4).</li>
 </ul>
 
 <h2>How the target list was built</h2>
@@ -71,6 +74,10 @@ a { color: #0b5cad; }
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/exit_by_sender.json" target="_blank" rel="noopener">exit_by_sender.json</a></td><td>847 KB</td><td>Complete exit-sender aggregation (5,419)</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/exit_by_destination.json" target="_blank" rel="noopener">exit_by_destination.json</a></td><td>4472 KB</td><td>Complete external-destination aggregation (28,155)</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/directed_metrics.json" target="_blank" rel="noopener">directed_metrics.json</a></td><td>3490 KB</td><td>Directed metrics (all addresses)</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/second_hop.json" target="_blank" rel="noopener">second_hop.json</a></td><td>34 KB</td><td>Second-hop tracing data (6 unknown consolidators, all-time)</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/second_hop_summary.txt" target="_blank" rel="noopener">second_hop_summary.txt</a></td><td>12 KB</td><td>Second-hop tracing summary (text)</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/third_hop.json" target="_blank" rel="noopener">third_hop.json</a></td><td>10 KB</td><td>Third-hop tracing data (GDGII…, all-time)</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/third_hop_summary.txt" target="_blank" rel="noopener">third_hop_summary.txt</a></td><td>6 KB</td><td>Third-hop tracing summary (text)</td></tr>
 </table></div>
 
 <h2>Part 1: Group classification</h2>
@@ -169,6 +176,40 @@ a { color: #0b5cad; }
 </table></div>
 <p>By contrast, the largest hub <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> is a pass-through, not a hoard: about 47.26 million Pi flowed in and the same amount flowed out over its lifetime, leaving a balance of only 2,923 Pi. An address that only receives within the list is therefore not necessarily a terminal point.</p>
 
+
+<h2>Part 3: Tracing beyond the exits (second hop)</h2>
+<p>The large consolidation destinations that remained unidentified in Part 2 were traced one step further. The targets are the top six non-exchange destinations of the outflow from the list. Their full payment histories were retrieved (no HTTP 429; all six completed; no scan caps reached) and aggregated for native Pi only. Amounts are all-time totals, unlike the Part 2 exit scan (which covered only the period from 20 Feb 2025), so each address's total inflows here are larger than the amount it received in the exit scan. Exchange labels are based on third-party investigation reports and news coverage, not on official exchange announcements.</p>
+<div class="tw"><table>
+<tr><th>Address</th><th>Verdict</th><th>Balance (Pi)</th><th>Total in (Pi)</th><th>Total out (Pi)</th><th>To exchanges (Pi)</th><th>Back to list (Pi)</th><th>Key note</th></tr>
+<tr><td><span class="addr">GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722</span></td><td>Pass-through / dispersal</td><td class="num">24,005</td><td class="num">28,112,429</td><td class="num">28,087,220</td><td class="num">514,819</td><td class="num">4,571,686</td><td>Only ~1.8% of outflows went directly to exchanges; dispersed in 136,410 small payments to 10,892 destinations</td></tr>
+<tr><td><span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span></td><td>Pass-through / circular</td><td class="num">37,997</td><td class="num">26,394,225</td><td class="num">26,355,413</td><td class="num">2,994,249</td><td class="num">7,897,275</td><td>Large flows back to the list, including 5,113,374 Pi cycled back to the hub GDGVILYX4RAT…</td></tr>
+<tr><td><span class="addr">GDIOBGWJZC7CZW32J3GAYUZGYGI5X3MK3O2W5KPF2OUPHCX3ZOYLLD24</span></td><td>Exchange-exit (with caveat)</td><td class="num">749</td><td class="num">13,433,254</td><td class="num">5,482,504</td><td class="num">5,480,200</td><td class="num">2,003</td><td>99.96% of payment outflows went to exchanges, but there is a ~7.95M Pi balance gap attributable to claimable balances</td></tr>
+<tr><td><span class="addr">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span></td><td>Mixed (half retained + circulation)</td><td class="num">7,061,704</td><td class="num">13,093,557</td><td class="num">6,031,483</td><td class="num">1,200,040</td><td class="num">1,050,002</td><td>~54% of inflows remain as balance; also cycled 3,780,000 Pi to GAL4…</td></tr>
+<tr><td><span class="addr">GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F</span></td><td>Pass-through</td><td class="num">16,165</td><td class="num">7,603,294</td><td class="num">7,587,129</td><td class="num">1,244,772</td><td class="num">140,029</td><td>67% of outflows went to GDGII… (traced in Part 4)</td></tr>
+<tr><td><span class="addr">GD24QVE4R42E4XRDF6T5IN6UAQLD2WN7OQGUC2FBHFUUZM7GLE4KG6YA</span></td><td>Pass-through / single-sink relay</td><td class="num">373</td><td class="num">46,307,778</td><td class="num">46,306,560</td><td class="num">0</td><td class="num">0</td><td>Almost everything forwarded to a single address, GDL66HS4YTUL…; only ~2.3% of inflows were list-derived</td></tr>
+</table></div>
+<h3>Notes on each target</h3>
+<ul>
+<li><span class="addr">GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722</span>: Not a hoard. It broke most of its inflows into 136,410 small payments dispersed to 10,892 destinations. Only about 1.8% of outflows went directly to exchanges, and 31,135 payments totalling 4,571,686 Pi went back to 713 listed addresses. It is a transit point, not a terminal.</li>
+<li><span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span>: Not a hoard. Its 111,391 payments dispersed funds to 6,771 destinations, and it circulates heavily with the list — including 28,729 payments totalling 5,113,374 Pi sent back to the in-list hub GDGVILYX4RAT…. It also circulates in both directions with GANHBPJHHE6A….</li>
+<li><span class="addr">GDIOBGWJZC7CZW32J3GAYUZGYGI5X3MK3O2W5KPF2OUPHCX3ZOYLLD24</span>: 99.96% of its payment outflows went to exchange wallets (Gate.io-linked 4,450,200 Pi / OKX 1,030,000 Pi). However, there is a balance discrepancy of about 7.95 million Pi, and a check of /operations found 61 create_claimable_balance and 58 claim operations, which are outside the payments feed. This route is considered the main cause of the gap, so it cannot be concluded that all funds reached exchanges.</li>
+<li><span class="addr">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span>: About 54% of inflows remain as balance, while most outflows are circulation to GAL4NDELSPS2… (3,780,000 Pi), an exit to the Gate.io-linked wallet (1,200,040 Pi), and a return to the in-list hub (1,050,002 Pi). It is neither a pure terminal nor a mere transit point.</li>
+<li><span class="addr">GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F</span>: Its balance is only 16,165 Pi. 67% of its outflows — 5,087,483 Pi — went to the unknown address GDGII3Q2US4L…, traced in Part 4. It also sent 1,244,772 Pi to OKX and 1,100,000 Pi to GCQH27CCPDZ… (with which it exchanges payments in both directions).</li>
+<li><span class="addr">GD24QVE4R42E4XRDF6T5IN6UAQLD2WN7OQGUC2FBHFUUZM7GLE4KG6YA</span>: It collected 46,307,778 Pi in 130,657 payments from 49,598 senders and forwarded almost all of it in 9,508 payments to a single external address, GDL66HS4YTUL…. Nothing went to exchanges or back to the list. However, only 1,054,409 Pi of its inflows (about 2.3%) was list-derived, and its senders include exchange wallets themselves, so this address looks like a large general relay only weakly connected to the list.</li>
+</ul>
+<p>In conclusion, neither of the two primary targets (GCQH… and GAL4…) hoards funds: both are pass-through / dispersal hubs that break roughly the same amount they receive into a large number of small payments. The only large retention among the six was GANH…; GDIO… is exchange-exit in shape, but its verdict carries the claimable-balance caveat.</p>
+
+<h2>Part 4: Third hop (GDGII…)</h2>
+<p>The unknown address <span class="addr">GDGII3Q2US4L4NQSR3PYVXMLDEVGEIJA27A3LOFANWTLME2Q5IURFOFM</span> — the largest destination of GCP3OIKPKX2Y… in Part 3 — was traced in the same way over its full payment history (3,472 records retrieved; no HTTP 429; no cap reached).</p>
+<ul>
+<li>Total inflows: <strong>305,019,942 Pi</strong> (2,453 payments from 359 senders) / Total outflows: <strong>293,497,102 Pi</strong> (1,019 payments to 74 destinations) / Current balance: <strong>11,522,831 Pi</strong> (about 3.8% of all inflows).</li>
+<li>Sent to exchanges: <strong>260,627,120 Pi</strong> in total (about 88.8% of outflows) — OKX 223,162,807 Pi, Gate.io-linked 28,681,952 Pi, Bitget 7,070,103 Pi, MEXC 1,712,258 Pi.</li>
+<li>Its largest source of funds is OKX itself: 263,382,413 Pi (about 86% of all inflows). It is a large two-way wallet that both receives from and sends to exchanges.</li>
+<li>Direct inflows from the suspected list: 0 Pi. The 5,087,483 Pi from GCP3OIKPKX2Y… is only about 1.7% of its total inflows. Flows back to the list amount to just 9.95 Pi, and flows to the Part 3 consolidation addresses are 0 Pi.</li>
+<li>The difference between the balance and (inflows − outflows) is only −9.19 Pi, consistent with accumulated transaction fees. There is no large claimable-balance-type gap.</li>
+</ul>
+<p>Verdict: GDGII… is not a consolidation or terminal point of the suspected network; it is a general, very large wallet with heavy two-way flows with exchanges. The funds from GCP3 most plausibly merged into this far larger flow and exited mainly to OKX, so this branch terminates at the exchanges. The largest non-exchange next destination is GBDCL7MLFVDZ… (27,830,915 Pi, with flows in both directions), but with about 89% of outflows already terminating at exchanges, a fourth hop would be of low value.</p>
+
 <h2>Limitations</h2>
 <div class="note">
 <ul>
@@ -177,6 +218,8 @@ a { color: #0b5cad; }
 <li>Part 1 does not report amount totals (asset types were not separated during collection). All amounts in Part 2 are native Pi only.</li>
 <li>The exit scan covers only transfers from inside the list to outside it, in native Pi. Second-hop movements outside the list and pre-open transfers to outside the list are not included.</li>
 <li>The outflow total may include ordinary sales by listed users. Not all of it is asserted to be illicit funds.</li>
+<li>Amounts in Parts 3 and 4 are all-time native totals, which is a different aggregation range from the Part 2 exit scan (from 20 Feb 2025 onwards only). Total inflows in Parts 3 and 4 are therefore larger than the amounts each address received in the exit scan.</li>
+<li>For GDIO…, there is a gap of about 7.95 million Pi between the payments aggregation (inflows 13,433,254 Pi, payment outflows 5,482,504 Pi) and its current balance (749 Pi). Claimable-balance operations found via /operations (61 creates, 58 claims) are considered the main cause, but the final destination of funds that moved through that route cannot be traced from the payments records.</li>
 <li>On-chain fund flows alone cannot identify a person or prove theft. This report shows connections and likely destinations of funds.</li>
 </ul>
 </div>

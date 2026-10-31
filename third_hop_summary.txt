@@ -1,0 +1,45 @@
+# Pi Network 三段目追跡（third-hop）サマリー
+
+作成: 2026-10-31 / 解析: モコ (Muse) / モデル: Muse Spark 1.3
+方法: 二段目追跡で判明した次段宛先 GDGII3Q2US4L… について、Pi Mainnet Horizon APIで全期間の payments を取得し、ネイティブPiのみ集計（二段目と同一手法）。現在残高は /accounts 取得。
+注意: 取引所ラベル（OKX / Gate.io関連 / Bitget / MEXC）は第三者の調査報告に基づくもので、取引所公式の発表ではない。チェーン上の資金移動は同一グループの可能性を示すもので、人物の特定や盗みの断定にはならない。
+実行結果: HTTP 429 なし、完了、300,000件の上限到達なし（取得レコード 3,472件）。
+取得上の注記: このアカウントの payments ページでは urllib が繰り返し IncompleteRead（応答の途中切断）を起こした（limit=25 でも発生、2026-10-31確認）。curl と requests では同一ページを正常取得できたため、third_hop.py のHTTP取得のみ requests に切り替えた。API・エンドポイント・集計方法は二段目と同一。
+
+## GDGII3Q2US4L4NQSR3PYVXMLDEVGEIJA27A3LOFANWTLME2Q5IURFOFM
+- 判定: **取引所出口型 (exchange-exit)**
+- 現在残高: 11,522,831 Pi
+- 入金（全期間・ネイティブ）: 305,019,942 Pi / 2,453件 / 送付元 359件
+  - 容疑リスト由来: 0 Pi（直接の入金なし）
+  - 二段目セット由来: 5,087,483 Pi / 63件 / 1アドレス（GCP3OIKPKX2Y… のみ。全入金の約1.7%）
+  - その他外部由来: 299,932,459 Pi / 2,390件 / 358アドレス（最大は OKX 自体からの 263,382,413 Pi / 406件 = 全入金の約86%）
+- 送金（全期間・ネイティブ）: 293,497,102 Pi / 1,019件 / 宛先 74件
+- 取引所への送金: 合計 260,627,120 Pi（送金の約88.8%）— OKX 223,162,807 Pi（508件）、Gate.io-linked 28,681,952 Pi（238件）、Bitget 7,070,103 Pi（54件）、MEXC 1,712,258 Pi（35件）
+- リスト内への復帰送金: 9.95 Pi / 1件 / 1アドレス（GBU7PR3VSIW… 宛の少額1件のみ。実質ゼロ）
+- 二段目セットへの送金: 0 Pi
+- その他外部への送金: 32,869,972 Pi / 183件 / 69アドレス
+- 期間: 2025-03-06T11:45:51Z 〜 2026-10-31T06:04:05Z（現在も活動中）
+- 根拠・所見: 滞留ではない。入金 305,019,942 Pi の約96%を送金済みで、残高 11,522,831 Pi は全入金の約3.8%。送金の約88.8%が既知の取引所ウォレット宛で、その大半は OKX（223,162,807 Pi）。一方で入金の最大元も OKX 自体（263,382,413 Pi）であり、取引所との双方向の大口往来が主体のウォレットとみられる。チェーン上の位置づけとして重要なのは規模感で、二段目 GCP3OIKPKX2Y… からの 5,087,483 Pi はこのアドレスの全入金の約1.7%にすぎない。つまり GDGII… は容疑リスト由来資金の集約・終着点というより、はるかに大きな一般の大口ウォレットであり、GCP3 からの資金もここで取引所（主に OKX）経由の大きな流れに混ざったとみるのが妥当。残高 11,522,831 Pi 自体は大きな額だが、流入総額比では残留分にすぎない。
+- 主な次段宛先（送金額順）:
+  - GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU : 223,162,807 Pi / 508件（取引所ラベル: OKX）
+  - GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW : 28,681,952 Pi / 238件（取引所ラベル: Gate.io-linked）
+  - GBDCL7MLFVDZOEJB7X6R5UX2IFUMQXQ4SMDXYDI6I5IIZ33UQOCINVZP : 27,830,915 Pi / 42件（非取引所の最大次段。逆方向の入金 7,061,984 Pi / 18件もあり双方向。四段目の候補）
+  - GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75 : 7,070,103 Pi / 54件（取引所ラベル: Bitget）
+  - GATOC5LCD5PVVG4IDCRRURWJMN3R7RLEUJMGAYMA5DGIJP2D46HAXCMA : 3,800,031 Pi / 23件（入金 718,542 Pi / 24件もあり双方向）
+  - GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73 : 1,712,258 Pi / 35件（取引所ラベル: MEXC）
+  - GANWCM5YR6YWYTPA3FJYTTATGLXWCAVUX2JE5MJJPDGUPFMPRWF2CDQR : 1,200,100 Pi / 2件
+- 主な入金元:
+  - GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU : 263,382,413 Pi / 406件（取引所ラベル: OKX）
+  - GBXHS6NJONBIDPXRQ4T7ZHUAR3U2MFQBDNL267O7DXVP5UBZ2FWUX7YD : 19,771,700 Pi / 925件
+  - GBDCL7MLFVDZOEJB7X6R5UX2IFUMQXQ4SMDXYDI6I5IIZ33UQOCINVZP : 7,061,984 Pi / 18件
+  - GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F : 5,087,483 Pi / 63件（二段目セット。2025-07-21〜2026-09-15、二段目スキャンの値と一致）
+  - GCHE7SZWOQXEQC7S3AYTPJAWVR4XBXPX4D22KWOT5HOTXC3R423E7PK7 : 2,900,000 Pi / 1件
+  - GBI6S5DPHHGYUCK2ERZC5RRAXJZF4D52J7JR6XSKVEJUKH7IUHMDPKDE : 2,860,480 Pi / 1件
+
+## 整合性チェック（入金 − 送金 と現在残高の差）
+payments は送金/入金の操作のみを対象とするため、取引手数料や claimable balance 等の対象外操作があると残高と一致しない。差を隠さず記録する。
+- GDGII3Q2US4L… : 残高 − (入金−送金) = -9.19 Pi
+- 差は約9 Piのみで、手数料の累積として整合する範囲。10,000 Pi を超える乖離はないため、claimable balance 等の /operations 追加確認は不要だった（実施なし）。
+- 分類合計の検証: 送金は 取引所 260,627,120 + リスト復帰 9.95 + 二段目セット 0 + その他外部 32,869,972 = 293,497,102 Pi で送金総額と一致。入金も リスト 0 + 二段目セット 5,087,483 + その他外部 299,932,459 = 305,019,942 Pi で入金総額と一致（いずれも丸め誤差 0.001 Pi 未満）。
+
+詳細データ: third_hop.json（宛先別トップ15・入金元トップ10、件数・金額・最初/最後の時刻、二段目セットとの相互フロー内訳を含む）

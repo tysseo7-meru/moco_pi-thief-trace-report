@@ -1,0 +1,1110 @@
+{
+ "rate_limited": false,
+ "cap_per_account": 300000,
+ "targets": [
+  "GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722",
+  "GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX",
+  "GDIOBGWJZC7CZW32J3GAYUZGYGI5X3MK3O2W5KPF2OUPHCX3ZOYLLD24",
+  "GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE",
+  "GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F",
+  "GD24QVE4R42E4XRDF6T5IN6UAQLD2WN7OQGUC2FBHFUUZM7GLE4KG6YA"
+ ],
+ "exchanges": {
+  "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU": "OKX",
+  "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW": "Gate.io-linked",
+  "GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75": "Bitget",
+  "GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73": "MEXC"
+ },
+ "exchange_label_caveat": "Exchange labels are third-party, not exchange-official.",
+ "results": {
+  "GDIOBGWJZC7CZW32J3GAYUZGYGI5X3MK3O2W5KPF2OUPHCX3ZOYLLD24": {
+   "address": "GDIOBGWJZC7CZW32J3GAYUZGYGI5X3MK3O2W5KPF2OUPHCX3ZOYLLD24",
+   "balances": {
+    "native": "749.4112436"
+   },
+   "balance_native": 749.4112436,
+   "total_payment_records": 143,
+   "scan_capped": false,
+   "in_ops_native": 114,
+   "out_ops_native": 28,
+   "in_native_total": 13433253.9812436,
+   "out_native_total": 5482504.0,
+   "in_other_asset_ops": 0,
+   "out_other_asset_ops": 0,
+   "distinct_in_counterparties_native": 3,
+   "distinct_out_counterparties_native": 4,
+   "first_timestamp": "2025-12-21T00:22:38Z",
+   "last_timestamp": "2026-09-14T00:55:40Z",
+   "first_in_timestamp": "2025-12-21T00:22:38Z",
+   "last_in_timestamp": "2026-08-29T20:41:12Z",
+   "first_out_timestamp": "2025-12-26T23:32:10Z",
+   "last_out_timestamp": "2026-09-14T00:55:40Z",
+   "outflow_to_exchanges": {
+    "OKX": {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 6,
+     "amount_native": 1030000.0,
+     "first": "2026-02-13T12:07:00Z",
+     "last": "2026-08-01T06:50:04Z"
+    },
+    "Gate.io-linked": {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 14,
+     "amount_native": 4450200.0,
+     "first": "2026-02-11T17:13:12Z",
+     "last": "2026-09-14T00:55:40Z"
+    }
+   },
+   "outflow_to_exchanges_total_amount": 5480200.0,
+   "outflow_to_exchanges_total_count": 20,
+   "outflow_back_to_suspect_list": {
+    "count": 4,
+    "amount_native": 2003.0,
+    "distinct": 1
+   },
+   "outflow_to_other_external": {
+    "count": 4,
+    "amount_native": 301.0,
+    "distinct": 1
+   },
+   "inflow_from_suspect_list": {
+    "count": 108,
+    "amount_native": 12902653.0,
+    "distinct": 1
+   },
+   "inflow_from_external": {
+    "count": 6,
+    "amount_native": 530600.9812436,
+    "distinct": 2
+   },
+   "top_out_destinations": [
+    {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 14,
+     "amount_native": 4450200.0,
+     "first": "2026-02-11T17:13:12Z",
+     "last": "2026-09-14T00:55:40Z"
+    },
+    {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 6,
+     "amount_native": 1030000.0,
+     "first": "2026-02-13T12:07:00Z",
+     "last": "2026-08-01T06:50:04Z"
+    },
+    {
+     "address": "GBKTDITOCN3XWVOOXBCQJCYJT3DZZ6BBWDZXZ62DI5ONRMM7UZTI7QXV",
+     "count": 4,
+     "amount_native": 2003.0,
+     "first": "2025-12-27T01:22:59Z",
+     "last": "2026-08-09T21:46:43Z"
+    },
+    {
+     "address": "GCGQ2AO6XQLW6WQFUPR2DFHAMIGILWEHIW23FIQH52ZMC3GSADEWT643",
+     "count": 4,
+     "amount_native": 301.0,
+     "first": "2025-12-26T23:32:10Z",
+     "last": "2026-01-01T01:11:16Z"
+    }
+   ],
+   "top_in_sources": [
+    {
+     "address": "GBKTDITOCN3XWVOOXBCQJCYJT3DZZ6BBWDZXZ62DI5ONRMM7UZTI7QXV",
+     "count": 108,
+     "amount_native": 12902653.0,
+     "first": "2025-12-29T01:07:44Z",
+     "last": "2026-08-09T10:00:15Z"
+    },
+    {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 3,
+     "amount_native": 420100.9812436,
+     "first": "2025-12-26T23:53:10Z",
+     "last": "2026-08-29T20:41:12Z"
+    },
+    {
+     "address": "GBC5R2AXGQVFV6INDL5LHXRP7MZIC6IBXWDPRB6DIMSYQAXLE32FDWEJ",
+     "count": 3,
+     "amount_native": 110500.0,
+     "first": "2025-12-21T00:22:38Z",
+     "last": "2026-07-18T07:24:29Z"
+    }
+   ],
+   "in_minus_out_native": 7950749.981243599,
+   "balance_minus_in_minus_out": -7950000.569999999,
+   "verdict": "exchange-exit",
+   "operations_check": {
+    "endpoint": "/accounts/{id}/operations (checked 2026-10-31)",
+    "operation_type_counts": {
+     "create_account": 1,
+     "payment": 142,
+     "create_claimable_balance": 61,
+     "claim_claimable_balance": 58
+    },
+    "note": "Balance gap of about -7,950,000.57 Pi vs payment in/out is attributable to claimable-balance operations, which the /payments endpoint does not include (61 creates = funds leaving spendable balance, 58 claims = funds returning). Payment outflows alone are 99.96% to exchange wallets."
+   }
+  },
+  "GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE": {
+   "address": "GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE",
+   "balances": {
+    "native": "7061703.6370534"
+   },
+   "balance_native": 7061703.6370534,
+   "total_payment_records": 16958,
+   "scan_capped": false,
+   "in_ops_native": 16851,
+   "out_ops_native": 106,
+   "in_native_total": 13093556.759157091,
+   "out_native_total": 6031483.002101,
+   "in_other_asset_ops": 0,
+   "out_other_asset_ops": 0,
+   "distinct_in_counterparties_native": 751,
+   "distinct_out_counterparties_native": 8,
+   "first_timestamp": "2024-12-16T03:53:03Z",
+   "last_timestamp": "2026-10-31T02:56:10Z",
+   "first_in_timestamp": "2024-12-16T03:53:03Z",
+   "last_in_timestamp": "2026-10-31T02:56:10Z",
+   "first_out_timestamp": "2024-12-16T03:54:36Z",
+   "last_out_timestamp": "2026-10-08T01:46:43Z",
+   "outflow_to_exchanges": {
+    "OKX": {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 1,
+     "amount_native": 0.1,
+     "first": "2025-02-12T04:02:54Z",
+     "last": "2025-02-12T04:02:54Z"
+    },
+    "Gate.io-linked": {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 13,
+     "amount_native": 1200040.0,
+     "first": "2025-02-20T07:57:55Z",
+     "last": "2026-10-08T01:46:43Z"
+    }
+   },
+   "outflow_to_exchanges_total_amount": 1200040.1,
+   "outflow_to_exchanges_total_count": 14,
+   "outflow_back_to_suspect_list": {
+    "count": 11,
+    "amount_native": 1050001.902101,
+    "distinct": 3
+   },
+   "outflow_to_other_external": {
+    "count": 81,
+    "amount_native": 3781441.0,
+    "distinct": 3
+   },
+   "inflow_from_suspect_list": {
+    "count": 79,
+    "amount_native": 6539051.045413699,
+    "distinct": 11
+   },
+   "inflow_from_external": {
+    "count": 16772,
+    "amount_native": 6554505.71374088,
+    "distinct": 740
+   },
+   "top_out_destinations": [
+    {
+     "address": "GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX",
+     "count": 78,
+     "amount_native": 3780000.0,
+     "first": "2025-09-29T14:23:46Z",
+     "last": "2026-05-30T13:46:54Z"
+    },
+    {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 13,
+     "amount_native": 1200040.0,
+     "first": "2025-02-20T07:57:55Z",
+     "last": "2026-10-08T01:46:43Z"
+    },
+    {
+     "address": "GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF",
+     "count": 7,
+     "amount_native": 1000001.9021010001,
+     "first": "2024-12-16T03:54:36Z",
+     "last": "2025-09-10T04:46:41Z"
+    },
+    {
+     "address": "GDZXXPOZMWSGFDCMSW3OHJ6ZDFSTMRXDHQDR6LF3NBONKL6THVZEVPUY",
+     "count": 3,
+     "amount_native": 30000.0,
+     "first": "2024-12-20T04:24:13Z",
+     "last": "2024-12-20T04:36:19Z"
+    },
+    {
+     "address": "GAL4XPWUDYMR33BV33FYUV2MVGCQTFYNMX5WK63V7LLIEWVZ5BUSC3OE",
+     "count": 1,
+     "amount_native": 20000.0,
+     "first": "2025-09-29T03:03:14Z",
+     "last": "2025-09-29T03:03:14Z"
+    },
+    {
+     "address": "GDBVGKTI5I5KTKBVSIXWTUIRPCO4YQ72RJJBGQZXUAVUFK45NY3PALBJ",
+     "count": 2,
+     "amount_native": 945.0,
+     "first": "2025-09-29T03:02:53Z",
+     "last": "2026-01-16T06:29:06Z"
+    },
+    {
+     "address": "GA7JWSKMWTTAB3463B27PHBGWPTEHQ2BO7HZ5USRLHIL7EDER336UB5W",
+     "count": 1,
+     "amount_native": 496.0,
+     "first": "2025-02-17T04:56:39Z",
+     "last": "2025-02-17T04:56:39Z"
+    },
+    {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 1,
+     "amount_native": 0.1,
+     "first": "2025-02-12T04:02:54Z",
+     "last": "2025-02-12T04:02:54Z"
+    }
+   ],
+   "top_in_sources": [
+    {
+     "address": "GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF",
+     "count": 18,
+     "amount_native": 6510296.279999999,
+     "first": "2025-04-08T13:28:14Z",
+     "last": "2026-01-27T01:36:39Z"
+    },
+    {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 192,
+     "amount_native": 3618549.781791099,
+     "first": "2025-05-30T10:40:13Z",
+     "last": "2026-10-18T00:17:10Z"
+    },
+    {
+     "address": "GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX",
+     "count": 13381,
+     "amount_native": 2364672.069877798,
+     "first": "2024-12-16T03:53:03Z",
+     "last": "2026-10-31T02:56:10Z"
+    },
+    {
+     "address": "GBJFXWSDO3D4XJGKGIQBEWE6CS5YBI64K3E45F7VP4LALLDO2LEFNJ2Y",
+     "count": 46,
+     "amount_native": 61131.99,
+     "first": "2025-11-25T17:02:14Z",
+     "last": "2026-03-10T14:40:04Z"
+    },
+    {
+     "address": "GAV272XQAZLIDCOG7JJPSAOZAY2BF6Z4GIFHVJLQ6MEHEYGWI4DPLUD7",
+     "count": 12,
+     "amount_native": 56061.0,
+     "first": "2025-10-14T07:59:27Z",
+     "last": "2026-02-03T02:33:49Z"
+    },
+    {
+     "address": "GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73",
+     "count": 273,
+     "amount_native": 45492.70924480002,
+     "first": "2025-09-23T16:47:06Z",
+     "last": "2026-10-26T08:01:05Z"
+    },
+    {
+     "address": "GDKAOH7QCQW5GI3LTLEYC7ER5YVFJBWKXCXTSN4JDZ72Q6C5UAXXG4DF",
+     "count": 1,
+     "amount_native": 30000.0,
+     "first": "2026-03-29T16:43:52Z",
+     "last": "2026-03-29T16:43:52Z"
+    },
+    {
+     "address": "GCCCE2ZDYOWQDGWSPNZAZ2O6DV2JGYCWVTLZAN4B2XV6E4FIGAQTI5NN",
+     "count": 149,
+     "amount_native": 28802.67833289999,
+     "first": "2025-09-24T11:29:08Z",
+     "last": "2026-10-24T17:49:35Z"
+    },
+    {
+     "address": "GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75",
+     "count": 63,
+     "amount_native": 26668.467676699976,
+     "first": "2025-09-23T23:08:34Z",
+     "last": "2026-10-19T12:12:35Z"
+    },
+    {
+     "address": "GBPHFQE7GFKIRTSXJVQ56TVCXH7LYLVQBCPGE22NJ3JQPBTDBWW2DURB",
+     "count": 128,
+     "amount_native": 24701.322965499985,
+     "first": "2025-09-23T08:18:04Z",
+     "last": "2026-10-18T16:39:10Z"
+    }
+   ],
+   "in_minus_out_native": 7062073.757056091,
+   "balance_minus_in_minus_out": -370.1200026907027,
+   "verdict": "mixed"
+  },
+  "GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F": {
+   "address": "GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F",
+   "balances": {
+    "native": "16165.4894894"
+   },
+   "balance_native": 16165.4894894,
+   "total_payment_records": 165,
+   "scan_capped": false,
+   "in_ops_native": 43,
+   "out_ops_native": 121,
+   "in_native_total": 7603293.597174,
+   "out_native_total": 7587128.984586599,
+   "in_other_asset_ops": 0,
+   "out_other_asset_ops": 0,
+   "distinct_in_counterparties_native": 4,
+   "distinct_out_counterparties_native": 5,
+   "first_timestamp": "2024-09-10T11:49:01Z",
+   "last_timestamp": "2026-09-15T07:40:12Z",
+   "first_in_timestamp": "2024-09-10T11:49:01Z",
+   "last_in_timestamp": "2026-07-20T11:06:52Z",
+   "first_out_timestamp": "2024-10-25T16:03:15Z",
+   "last_out_timestamp": "2026-09-15T07:40:12Z",
+   "outflow_to_exchanges": {
+    "OKX": {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 8,
+     "amount_native": 1244772.1234588,
+     "first": "2025-02-20T07:16:14Z",
+     "last": "2025-08-28T15:53:08Z"
+    }
+   },
+   "outflow_to_exchanges_total_amount": 1244772.1234588,
+   "outflow_to_exchanges_total_count": 8,
+   "outflow_back_to_suspect_list": {
+    "count": 27,
+    "amount_native": 140028.86112780002,
+    "distinct": 1
+   },
+   "outflow_to_other_external": {
+    "count": 86,
+    "amount_native": 6202328.0,
+    "distinct": 3
+   },
+   "inflow_from_suspect_list": {
+    "count": 3,
+    "amount_native": 5000000.0,
+    "distinct": 1
+   },
+   "inflow_from_external": {
+    "count": 40,
+    "amount_native": 2603293.597174,
+    "distinct": 3
+   },
+   "top_out_destinations": [
+    {
+     "address": "GDGII3Q2US4L4NQSR3PYVXMLDEVGEIJA27A3LOFANWTLME2Q5IURFOFM",
+     "count": 63,
+     "amount_native": 5087483.0,
+     "first": "2025-07-21T10:46:24Z",
+     "last": "2026-09-15T07:40:12Z"
+    },
+    {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 8,
+     "amount_native": 1244772.1234588,
+     "first": "2025-02-20T07:16:14Z",
+     "last": "2025-08-28T15:53:08Z"
+    },
+    {
+     "address": "GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722",
+     "count": 14,
+     "amount_native": 1100000.0,
+     "first": "2025-05-16T05:31:01Z",
+     "last": "2026-08-27T06:22:10Z"
+    },
+    {
+     "address": "GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE",
+     "count": 27,
+     "amount_native": 140028.86112780002,
+     "first": "2025-08-22T14:33:24Z",
+     "last": "2026-08-10T07:30:23Z"
+    },
+    {
+     "address": "GBRFX3BFE33AVWCC73QITWRLIGGCXBGG64D2QHLGLPXSBFAWWKRY5KFZ",
+     "count": 9,
+     "amount_native": 14845.0,
+     "first": "2024-10-25T16:03:15Z",
+     "last": "2025-01-28T15:23:53Z"
+    }
+   ],
+   "top_in_sources": [
+    {
+     "address": "GANR2MWRM734P7L2LELK4FOYRZK3H2B6UEMVA6FIJFXIFA6GHQOWLZ25",
+     "count": 3,
+     "amount_native": 5000000.0,
+     "first": "2025-08-21T06:23:54Z",
+     "last": "2026-07-20T11:06:52Z"
+    },
+    {
+     "address": "GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722",
+     "count": 37,
+     "amount_native": 1151620.13,
+     "first": "2024-09-10T11:49:01Z",
+     "last": "2025-02-20T07:34:59Z"
+    },
+    {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 2,
+     "amount_native": 951673.5171739999,
+     "first": "2025-06-28T09:18:52Z",
+     "last": "2025-06-29T14:33:06Z"
+    },
+    {
+     "address": "GB2FO77HG2V5LKUYI4MSRO6BBEOPZYYJKD5NW5RZXIILLKH7TNOBZ2JD",
+     "count": 1,
+     "amount_native": 499999.95,
+     "first": "2025-05-10T15:23:15Z",
+     "last": "2025-05-10T15:23:15Z"
+    }
+   ],
+   "in_minus_out_native": 16164.612587400712,
+   "balance_minus_in_minus_out": 0.8769019992887479,
+   "verdict": "pass-through"
+  },
+  "GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX": {
+   "address": "GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX",
+   "balances": {
+    "native": "37996.7770090"
+   },
+   "balance_native": 37996.777009,
+   "total_payment_records": 112555,
+   "scan_capped": false,
+   "in_ops_native": 1164,
+   "out_ops_native": 111391,
+   "in_native_total": 26394225.319481008,
+   "out_native_total": 26355412.502420645,
+   "in_other_asset_ops": 0,
+   "out_other_asset_ops": 0,
+   "distinct_in_counterparties_native": 52,
+   "distinct_out_counterparties_native": 6771,
+   "first_timestamp": "2023-03-16T12:23:12Z",
+   "last_timestamp": "2026-10-31T04:21:10Z",
+   "first_in_timestamp": "2023-03-16T12:23:12Z",
+   "last_in_timestamp": "2026-10-27T01:33:40Z",
+   "first_out_timestamp": "2023-04-20T13:18:32Z",
+   "last_out_timestamp": "2026-10-31T04:21:10Z",
+   "outflow_to_exchanges": {
+    "OKX": {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 4992,
+     "amount_native": 819647.926248553,
+     "first": "2025-02-14T06:31:32Z",
+     "last": "2026-10-31T04:21:05Z"
+    },
+    "Gate.io-linked": {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 9796,
+     "amount_native": 1723312.7450192391,
+     "first": "2025-03-25T14:40:29Z",
+     "last": "2026-10-30T11:13:15Z"
+    },
+    "Bitget": {
+     "address": "GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75",
+     "count": 2053,
+     "amount_native": 339528.3895865062,
+     "first": "2025-02-21T04:48:38Z",
+     "last": "2026-10-31T00:30:15Z"
+    },
+    "MEXC": {
+     "address": "GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73",
+     "count": 749,
+     "amount_native": 111759.77855969913,
+     "first": "2025-03-25T17:03:46Z",
+     "last": "2026-10-20T18:16:15Z"
+    }
+   },
+   "outflow_to_exchanges_total_amount": 2994248.8394139973,
+   "outflow_to_exchanges_total_count": 17590,
+   "outflow_back_to_suspect_list": {
+    "count": 35991,
+    "amount_native": 7897274.638797593,
+    "distinct": 472
+   },
+   "outflow_to_other_external": {
+    "count": 57810,
+    "amount_native": 15463889.02426353,
+    "distinct": 6295
+   },
+   "inflow_from_suspect_list": {
+    "count": 985,
+    "amount_native": 21335155.589,
+    "distinct": 8
+   },
+   "inflow_from_external": {
+    "count": 178,
+    "amount_native": 5059068.730481001,
+    "distinct": 43
+   },
+   "top_out_destinations": [
+    {
+     "address": "GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF",
+     "count": 28729,
+     "amount_native": 5113374.069993288,
+     "first": "2023-05-07T06:01:27Z",
+     "last": "2026-05-08T02:03:23Z"
+    },
+    {
+     "address": "GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE",
+     "count": 13382,
+     "amount_native": 2364872.0598777984,
+     "first": "2024-12-16T03:53:03Z",
+     "last": "2026-10-31T04:21:10Z"
+    },
+    {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 9796,
+     "amount_native": 1723312.7450192391,
+     "first": "2025-03-25T14:40:29Z",
+     "last": "2026-10-30T11:13:15Z"
+    },
+    {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 4992,
+     "amount_native": 819647.926248553,
+     "first": "2025-02-14T06:31:32Z",
+     "last": "2026-10-31T04:21:05Z"
+    },
+    {
+     "address": "GAL4XPWUDYMR33BV33FYUV2MVGCQTFYNMX5WK63V7LLIEWVZ5BUSC3OE",
+     "count": 36,
+     "amount_native": 383258.0254567,
+     "first": "2023-04-20T13:18:32Z",
+     "last": "2024-10-24T09:20:22Z"
+    },
+    {
+     "address": "GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75",
+     "count": 2053,
+     "amount_native": 339528.3895865062,
+     "first": "2025-02-21T04:48:38Z",
+     "last": "2026-10-31T00:30:15Z"
+    },
+    {
+     "address": "GD2KMYUV2TWQMLPIUTV55FTI4TEBEBH5YR6UFLWKFIQPBFM7QSN4VNN7",
+     "count": 419,
+     "amount_native": 147710.17999999953,
+     "first": "2024-12-13T20:31:31Z",
+     "last": "2026-10-30T21:23:55Z"
+    },
+    {
+     "address": "GAVODH2Q23DFE46FYO43QKJDRYNTQUMCCI6QWXHC2LHWC2KLUHSSHR33",
+     "count": 565,
+     "amount_native": 120579.8199076993,
+     "first": "2025-02-12T15:01:04Z",
+     "last": "2026-10-28T20:17:25Z"
+    },
+    {
+     "address": "GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73",
+     "count": 749,
+     "amount_native": 111759.77855969913,
+     "first": "2025-03-25T17:03:46Z",
+     "last": "2026-10-20T18:16:15Z"
+    },
+    {
+     "address": "GAJT7KIEJKPW7VAUCGKUKEQCFHSN7GCEXEOWDKHIVNO2336U6L5XOEHL",
+     "count": 302,
+     "amount_native": 102782.68224000058,
+     "first": "2024-12-27T03:33:09Z",
+     "last": "2025-12-02T00:49:41Z"
+    },
+    {
+     "address": "GBZ3OQ5VJW2QTTPMEOTJV5PIAAGH7V54SB56JRXDKFW6HYLUV2Z7H7RQ",
+     "count": 487,
+     "amount_native": 101089.12150000017,
+     "first": "2025-02-18T00:21:39Z",
+     "last": "2026-07-16T19:29:03Z"
+    },
+    {
+     "address": "GCUX7YC3PXVB4LKTYMC7B3LNGJFL4VXICJGGCWNATK3BGK5BGUMIO7Z6",
+     "count": 491,
+     "amount_native": 100366.44549999964,
+     "first": "2025-03-01T03:30:34Z",
+     "last": "2026-08-11T17:46:56Z"
+    },
+    {
+     "address": "GDZXXPOZMWSGFDCMSW3OHJ6ZDFSTMRXDHQDR6LF3NBONKL6THVZEVPUY",
+     "count": 11,
+     "amount_native": 100000.0,
+     "first": "2024-09-28T09:25:36Z",
+     "last": "2024-10-21T14:26:29Z"
+    },
+    {
+     "address": "GAO6S7XO7GMZPH2PF6U3TFOEKXLXDWKLK34NRSLEY2IBILM2GQKR7RSI",
+     "count": 475,
+     "amount_native": 96259.60703999968,
+     "first": "2024-11-27T07:02:58Z",
+     "last": "2026-10-31T03:17:55Z"
+    },
+    {
+     "address": "GASHZGLCNOOBSUNM3LTWBVNCFEDKFCRNJI7HFLAZNXJVTI5TWEVYU5DP",
+     "count": 475,
+     "amount_native": 93568.53699999956,
+     "first": "2025-04-06T12:53:02Z",
+     "last": "2026-08-22T19:55:42Z"
+    }
+   ],
+   "top_in_sources": [
+    {
+     "address": "GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF",
+     "count": 950,
+     "amount_native": 21074221.23,
+     "first": "2024-05-24T04:13:22Z",
+     "last": "2025-09-27T12:15:53Z"
+    },
+    {
+     "address": "GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE",
+     "count": 78,
+     "amount_native": 3780000.0,
+     "first": "2025-09-29T14:23:46Z",
+     "last": "2026-05-30T13:46:54Z"
+    },
+    {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 21,
+     "amount_native": 1000099.5799999998,
+     "first": "2026-04-02T03:26:42Z",
+     "last": "2026-10-27T01:33:40Z"
+    },
+    {
+     "address": "GDBVGKTI5I5KTKBVSIXWTUIRPCO4YQ72RJJBGQZXUAVUFK45NY3PALBJ",
+     "count": 9,
+     "amount_native": 247573.83,
+     "first": "2024-07-16T15:51:33Z",
+     "last": "2025-03-24T12:45:14Z"
+    },
+    {
+     "address": "GC4YQP6VRDGAPETAHVOAEGJPEV3VMBV6VZDNULHROBS6OSKM3FQHSX6V",
+     "count": 4,
+     "amount_native": 130960.54,
+     "first": "2023-12-15T03:07:42Z",
+     "last": "2024-03-20T11:07:53Z"
+    },
+    {
+     "address": "GBCRZX73YTPTA7HSHVXNXYGJCUUKVUQMASELPXZ5WQVDUT7RLINS6N3Y",
+     "count": 16,
+     "amount_native": 80200.419,
+     "first": "2023-07-01T06:56:26Z",
+     "last": "2024-10-07T04:02:58Z"
+    },
+    {
+     "address": "GAL4XPWUDYMR33BV33FYUV2MVGCQTFYNMX5WK63V7LLIEWVZ5BUSC3OE",
+     "count": 10,
+     "amount_native": 48901.0,
+     "first": "2023-03-16T12:23:12Z",
+     "last": "2025-09-30T02:24:32Z"
+    },
+    {
+     "address": "GD2ESDZ4LFWXTN24SUNLE7ORKIZESCINNFVWFZI5CQ4LED7K5VGX3564",
+     "count": 1,
+     "amount_native": 19760.0,
+     "first": "2025-03-13T14:30:34Z",
+     "last": "2025-03-13T14:30:34Z"
+    },
+    {
+     "address": "GBJP2ZUXUPFNOPVE3XQ6GN4WG7L6YIXKHAUMVOXGGJZUDWYCUKK4BBTR",
+     "count": 1,
+     "amount_native": 10000.0,
+     "first": "2025-03-13T14:31:37Z",
+     "last": "2025-03-13T14:31:37Z"
+    },
+    {
+     "address": "GBCIOFSLAM2QFMZYVKE3MQ2BRF7NOIQENRRZYHFDQAN4RJ2UWBOZFL5E",
+     "count": 2,
+     "amount_native": 700.0,
+     "first": "2023-07-05T05:11:43Z",
+     "last": "2023-07-05T12:34:27Z"
+    }
+   ],
+   "in_minus_out_native": 38812.81706036255,
+   "balance_minus_in_minus_out": -816.04005136255,
+   "verdict": "pass-through"
+  },
+  "GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722": {
+   "address": "GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722",
+   "balances": {
+    "native": "24005.1797457"
+   },
+   "balance_native": 24005.1797457,
+   "total_payment_records": 136988,
+   "scan_capped": false,
+   "in_ops_native": 578,
+   "out_ops_native": 136410,
+   "in_native_total": 28112429.36269561,
+   "out_native_total": 28087219.584929585,
+   "in_other_asset_ops": 0,
+   "out_other_asset_ops": 0,
+   "distinct_in_counterparties_native": 169,
+   "distinct_out_counterparties_native": 10892,
+   "first_timestamp": "2024-01-18T05:02:18Z",
+   "last_timestamp": "2026-10-31T04:26:15Z",
+   "first_in_timestamp": "2024-01-18T05:02:18Z",
+   "last_in_timestamp": "2026-10-26T23:32:00Z",
+   "first_out_timestamp": "2024-01-18T09:11:10Z",
+   "last_out_timestamp": "2026-10-31T04:26:15Z",
+   "outflow_to_exchanges": {
+    "OKX": {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 1291,
+     "amount_native": 327338.9480138986,
+     "first": "2025-02-12T05:51:04Z",
+     "last": "2026-10-08T10:09:36Z"
+    },
+    "Gate.io-linked": {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 1525,
+     "amount_native": 151809.52006780086,
+     "first": "2025-02-17T21:41:10Z",
+     "last": "2025-07-17T11:27:52Z"
+    },
+    "Bitget": {
+     "address": "GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75",
+     "count": 173,
+     "amount_native": 11346.920535599998,
+     "first": "2025-02-20T07:05:10Z",
+     "last": "2026-10-02T06:05:32Z"
+    },
+    "MEXC": {
+     "address": "GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73",
+     "count": 175,
+     "amount_native": 24323.836409999956,
+     "first": "2025-02-22T06:22:45Z",
+     "last": "2026-10-25T11:40:55Z"
+    }
+   },
+   "outflow_to_exchanges_total_amount": 514819.2250272994,
+   "outflow_to_exchanges_total_count": 3164,
+   "outflow_back_to_suspect_list": {
+    "count": 31135,
+    "amount_native": 4571686.118957101,
+    "distinct": 713
+   },
+   "outflow_to_other_external": {
+    "count": 102111,
+    "amount_native": 23000714.240965933,
+    "distinct": 10175
+   },
+   "inflow_from_suspect_list": {
+    "count": 385,
+    "amount_native": 27003349.2244724,
+    "distinct": 35
+   },
+   "inflow_from_external": {
+    "count": 192,
+    "amount_native": 1108584.1482232,
+    "distinct": 133
+   },
+   "top_out_destinations": [
+    {
+     "address": "GBRFX3BFE33AVWCC73QITWRLIGGCXBGG64D2QHLGLPXSBFAWWKRY5KFZ",
+     "count": 104,
+     "amount_native": 2360160.2236,
+     "first": "2024-01-31T16:53:05Z",
+     "last": "2025-05-16T05:33:13Z"
+    },
+    {
+     "address": "GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F",
+     "count": 37,
+     "amount_native": 1151620.13,
+     "first": "2024-09-10T11:49:01Z",
+     "last": "2025-02-20T07:34:59Z"
+    },
+    {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 1291,
+     "amount_native": 327338.9480138986,
+     "first": "2025-02-12T05:51:04Z",
+     "last": "2026-10-08T10:09:36Z"
+    },
+    {
+     "address": "GBKTDITOCN3XWVOOXBCQJCYJT3DZZ6BBWDZXZ62DI5ONRMM7UZTI7QXV",
+     "count": 1748,
+     "amount_native": 270555.5504042,
+     "first": "2024-02-15T01:26:37Z",
+     "last": "2026-08-15T12:04:35Z"
+    },
+    {
+     "address": "GDOMTXQTOASNIZE3VH47ULR4JLLYLHHVOY6ZHV5FJFOHFB5KWTTLFXOL",
+     "count": 498,
+     "amount_native": 228254.21999999866,
+     "first": "2024-05-23T08:46:37Z",
+     "last": "2026-03-25T16:14:42Z"
+    },
+    {
+     "address": "GBMH4ZMDKBODLUQWVXGXU4VWVKVHZA3WTEQ7WLM6ERKNRFTIJUK2ZNHF",
+     "count": 478,
+     "amount_native": 225681.1719999988,
+     "first": "2024-06-15T03:08:21Z",
+     "last": "2026-03-27T01:35:06Z"
+    },
+    {
+     "address": "GD2HQENE47L6JJLZTY5EXSIYZ5FJP64JOORGADSPZT4PTTEHPNCG6LOO",
+     "count": 476,
+     "amount_native": 222998.8239999988,
+     "first": "2024-06-15T03:02:11Z",
+     "last": "2026-03-25T00:02:22Z"
+    },
+    {
+     "address": "GC4AWRNGB5HPNCZKJYITFJST33VWZX5SNBCYB3XSA2O5IHVC6SHDURDS",
+     "count": 383,
+     "amount_native": 179602.72999999966,
+     "first": "2025-02-28T03:52:42Z",
+     "last": "2026-03-25T16:22:36Z"
+    },
+    {
+     "address": "GACVIJLDPCFEWI27HHVMY73RT5F5EB6RWDQMG4VX6KRI3MOKY2IZ72AF",
+     "count": 348,
+     "amount_native": 162147.84800000003,
+     "first": "2025-04-07T07:17:10Z",
+     "last": "2026-03-25T00:08:41Z"
+    },
+    {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 1525,
+     "amount_native": 151809.52006780086,
+     "first": "2025-02-17T21:41:10Z",
+     "last": "2025-07-17T11:27:52Z"
+    },
+    {
+     "address": "GD2SOTTXSZXE6QS3TKQWII5UKX3BOOVODPJGCW2ALSB3MOZQESBLR76Z",
+     "count": 273,
+     "amount_native": 117924.90667200046,
+     "first": "2024-02-13T02:45:59Z",
+     "last": "2026-08-14T02:40:26Z"
+    },
+    {
+     "address": "GAPVKDLQ4CDIWRWSYBEAGIWZZYWM6HDDD2BCQELMYWPSJDX4CPMHY3ZQ",
+     "count": 373,
+     "amount_native": 88831.84059630004,
+     "first": "2026-08-13T13:54:20Z",
+     "last": "2026-10-31T04:03:35Z"
+    },
+    {
+     "address": "GBI5FVKS54A5GPV3PZWOVJKPXAUAC7DH67IGGZ45FVG3P4CYPXERHCEW",
+     "count": 264,
+     "amount_native": 86745.30439720012,
+     "first": "2024-03-16T11:56:19Z",
+     "last": "2025-11-20T02:24:02Z"
+    },
+    {
+     "address": "GAHZVV57WGSE3PFRKRLPND2QDZKPXFCRIFRM6MZIEICE442IVECSVTUL",
+     "count": 172,
+     "amount_native": 84685.3200000001,
+     "first": "2025-10-03T06:08:00Z",
+     "last": "2026-03-27T01:04:22Z"
+    },
+    {
+     "address": "GAS4LM2X7PA7A2K5R33HUNFV6TFP3T7MDLOAJOCL22U5VMSPX4ZYLEHV",
+     "count": 177,
+     "amount_native": 84087.82808000011,
+     "first": "2025-02-17T09:23:36Z",
+     "last": "2026-07-20T08:21:44Z"
+    }
+   ],
+   "top_in_sources": [
+    {
+     "address": "GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE",
+     "count": 289,
+     "amount_native": 27002060.5,
+     "first": "2024-01-18T05:02:18Z",
+     "last": "2026-10-26T23:32:00Z"
+    },
+    {
+     "address": "GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F",
+     "count": 14,
+     "amount_native": 1100000.0,
+     "first": "2025-05-16T05:31:01Z",
+     "last": "2026-08-27T06:22:10Z"
+    },
+    {
+     "address": "GAVEU3HXRK6FMFGVDN5EWXKAQOZXEJRZZIOR4MB47THDWOOB6L6SJCPL",
+     "count": 2,
+     "amount_native": 3000.5,
+     "first": "2024-10-13T02:45:58Z",
+     "last": "2024-10-13T03:21:48Z"
+    },
+    {
+     "address": "GDRURQJHTFKZPI6WOKB5JVKVDEJHJ6X5LAMQN7Z5BRFK63NYK2DXMY7L",
+     "count": 1,
+     "amount_native": 1000.0,
+     "first": "2025-01-08T03:11:01Z",
+     "last": "2025-01-08T03:11:01Z"
+    },
+    {
+     "address": "GA7PSXJDZR6KFELWJBKLGPKFAQX5KHBUN6ES3MTE6MWNGFCFLEFTTDVD",
+     "count": 1,
+     "amount_native": 999.95,
+     "first": "2025-06-21T23:40:33Z",
+     "last": "2025-06-21T23:40:33Z"
+    },
+    {
+     "address": "GC6KRC47YXL4JOT634NULQ3R4Y2LPBKMSDBFPB2J5BYQBRWL7MI4ZEF2",
+     "count": 2,
+     "amount_native": 990.0,
+     "first": "2025-10-17T15:35:10Z",
+     "last": "2025-12-01T16:16:46Z"
+    },
+    {
+     "address": "GD7EFFQ34HO4HNXJRAIXSJYZPUFBHEAFDKK5W3KGILIC7UBNEBUVQTRH",
+     "count": 4,
+     "amount_native": 605.46,
+     "first": "2024-04-17T01:27:59Z",
+     "last": "2025-08-08T07:25:32Z"
+    },
+    {
+     "address": "GB37R67XUZMTDISS5OU6XZ4SV6ZE4YT2RRO35OESGCVQ5YP6C3AEDJS2",
+     "count": 3,
+     "amount_native": 503.23,
+     "first": "2024-05-25T07:56:29Z",
+     "last": "2025-03-24T05:03:57Z"
+    },
+    {
+     "address": "GCOLH5FDHUFMZQFCGS2IL4CEDBPSXO5LMKWVDOMOYWMWY2655RQO5W5E",
+     "count": 1,
+     "amount_native": 496.0,
+     "first": "2025-03-19T22:14:13Z",
+     "last": "2025-03-19T22:14:13Z"
+    },
+    {
+     "address": "GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722",
+     "count": 1,
+     "amount_native": 495.99,
+     "first": "2025-02-14T00:23:06Z",
+     "last": "2025-02-14T00:23:06Z"
+    }
+   ],
+   "in_minus_out_native": 25209.77776602283,
+   "balance_minus_in_minus_out": -1204.5980203228319,
+   "verdict": "pass-through"
+  },
+  "GD24QVE4R42E4XRDF6T5IN6UAQLD2WN7OQGUC2FBHFUUZM7GLE4KG6YA": {
+   "address": "GD24QVE4R42E4XRDF6T5IN6UAQLD2WN7OQGUC2FBHFUUZM7GLE4KG6YA",
+   "balances": {
+    "native": "373.0700000"
+   },
+   "balance_native": 373.07,
+   "total_payment_records": 140166,
+   "scan_capped": false,
+   "in_ops_native": 130657,
+   "out_ops_native": 9508,
+   "in_native_total": 46307777.91301501,
+   "out_native_total": 46306560.351047896,
+   "in_other_asset_ops": 0,
+   "out_other_asset_ops": 0,
+   "distinct_in_counterparties_native": 49598,
+   "distinct_out_counterparties_native": 1,
+   "first_timestamp": "2025-02-20T02:22:56Z",
+   "last_timestamp": "2026-10-31T04:30:50Z",
+   "first_in_timestamp": "2025-02-20T02:22:56Z",
+   "last_in_timestamp": "2026-10-31T04:30:50Z",
+   "first_out_timestamp": "2025-02-20T08:16:25Z",
+   "last_out_timestamp": "2026-10-31T02:02:10Z",
+   "outflow_to_exchanges": {},
+   "outflow_to_exchanges_total_amount": 0,
+   "outflow_to_exchanges_total_count": 0,
+   "outflow_back_to_suspect_list": {
+    "count": 0,
+    "amount_native": 0.0,
+    "distinct": 0
+   },
+   "outflow_to_other_external": {
+    "count": 9508,
+    "amount_native": 46306560.351047896,
+    "distinct": 1
+   },
+   "inflow_from_suspect_list": {
+    "count": 487,
+    "amount_native": 1054409.3006497002,
+    "distinct": 96
+   },
+   "inflow_from_external": {
+    "count": 130170,
+    "amount_native": 45253368.61236516,
+    "distinct": 49502
+   },
+   "top_out_destinations": [
+    {
+     "address": "GDL66HS4YTULXZ7NY7TZRUPCVD3BMANUIZUPCXU5HG46CVMI3YHBBWB6",
+     "count": 9508,
+     "amount_native": 46306560.351047896,
+     "first": "2025-02-20T08:16:25Z",
+     "last": "2026-10-31T02:02:10Z"
+    }
+   ],
+   "top_in_sources": [
+    {
+     "address": "GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75",
+     "count": 5076,
+     "amount_native": 3833266.15565225,
+     "first": "2025-02-21T09:03:02Z",
+     "last": "2026-10-30T03:40:35Z"
+    },
+    {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 129,
+     "amount_native": 1586440.4407266,
+     "first": "2025-02-20T02:22:56Z",
+     "last": "2026-10-25T07:18:40Z"
+    },
+    {
+     "address": "GBCNRISSUKYKJMCPMX77UCLNZBOAGQQXZFN2WL5EKBO2FQWRYDQWJ44P",
+     "count": 44,
+     "amount_native": 922252.0,
+     "first": "2025-02-26T01:54:10Z",
+     "last": "2026-09-06T01:41:37Z"
+    },
+    {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 1635,
+     "amount_native": 862548.6043621978,
+     "first": "2025-02-20T07:30:37Z",
+     "last": "2026-10-28T09:55:40Z"
+    },
+    {
+     "address": "GBPHFQE7GFKIRTSXJVQ56TVCXH7LYLVQBCPGE22NJ3JQPBTDBWW2DURB",
+     "count": 948,
+     "amount_native": 699247.7843446992,
+     "first": "2025-02-21T17:13:46Z",
+     "last": "2026-10-21T23:55:35Z"
+    },
+    {
+     "address": "GBBHDXDGLFNHCIHL4UUAQ3NCTBRP4IMXQRFNMIW7NTFTJKQ4UNQJALDB",
+     "count": 965,
+     "amount_native": 690169.6732796998,
+     "first": "2025-02-21T13:41:42Z",
+     "last": "2026-10-10T12:38:07Z"
+    },
+    {
+     "address": "GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73",
+     "count": 1676,
+     "amount_native": 654953.6666418982,
+     "first": "2025-02-22T04:25:58Z",
+     "last": "2026-10-28T16:55:10Z"
+    },
+    {
+     "address": "GA7PSXJDZR6KFELWJBKLGPKFAQX5KHBUN6ES3MTE6MWNGFCFLEFTTDVD",
+     "count": 963,
+     "amount_native": 613647.0639138011,
+     "first": "2025-02-21T17:11:51Z",
+     "last": "2026-10-24T19:38:00Z"
+    },
+    {
+     "address": "GBAD3GDK7RKAMPLM2FELL3OI65QUCD45HAMMRKX2HZ6WEMV4EP2ORVTH",
+     "count": 953,
+     "amount_native": 583295.4296637006,
+     "first": "2025-02-21T18:26:21Z",
+     "last": "2026-10-18T11:29:10Z"
+    },
+    {
+     "address": "GCCCE2ZDYOWQDGWSPNZAZ2O6DV2JGYCWVTLZAN4B2XV6E4FIGAQTI5NN",
+     "count": 918,
+     "amount_native": 553102.0496124006,
+     "first": "2025-02-21T17:58:08Z",
+     "last": "2026-09-30T08:41:16Z"
+    }
+   ],
+   "in_minus_out_native": 1217.561967112124,
+   "balance_minus_in_minus_out": -844.491967112124,
+   "verdict": "pass-through"
+  }
+ }
+}

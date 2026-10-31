@@ -1,0 +1,314 @@
+{
+ "rate_limited": false,
+ "cap_per_account": 300000,
+ "targets": [
+  "GDGII3Q2US4L4NQSR3PYVXMLDEVGEIJA27A3LOFANWTLME2Q5IURFOFM"
+ ],
+ "second_hop_set": [
+  "GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722",
+  "GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX",
+  "GDIOBGWJZC7CZW32J3GAYUZGYGI5X3MK3O2W5KPF2OUPHCX3ZOYLLD24",
+  "GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE",
+  "GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F",
+  "GD24QVE4R42E4XRDF6T5IN6UAQLD2WN7OQGUC2FBHFUUZM7GLE4KG6YA"
+ ],
+ "exchanges": {
+  "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU": "OKX",
+  "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW": "Gate.io-linked",
+  "GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75": "Bitget",
+  "GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73": "MEXC"
+ },
+ "exchange_label_caveat": "Exchange labels are third-party, not exchange-official.",
+ "results": {
+  "GDGII3Q2US4L4NQSR3PYVXMLDEVGEIJA27A3LOFANWTLME2Q5IURFOFM": {
+   "address": "GDGII3Q2US4L4NQSR3PYVXMLDEVGEIJA27A3LOFANWTLME2Q5IURFOFM",
+   "balances": {
+    "native": "11522831.0883606"
+   },
+   "balance_native": 11522831.0883606,
+   "total_payment_records": 3472,
+   "scan_capped": false,
+   "in_ops_native": 2453,
+   "out_ops_native": 1019,
+   "in_native_total": 305019942.2570496,
+   "out_native_total": 293497101.97868943,
+   "in_other_asset_ops": 0,
+   "out_other_asset_ops": 0,
+   "distinct_in_counterparties_native": 359,
+   "distinct_out_counterparties_native": 74,
+   "first_timestamp": "2025-03-06T11:45:51Z",
+   "last_timestamp": "2026-10-31T06:04:05Z",
+   "first_in_timestamp": "2025-03-06T11:45:51Z",
+   "last_in_timestamp": "2026-10-31T06:04:05Z",
+   "first_out_timestamp": "2025-03-07T03:07:53Z",
+   "last_out_timestamp": "2026-10-31T01:59:50Z",
+   "outflow_to_exchanges": {
+    "OKX": {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 508,
+     "amount_native": 223162807.4691966,
+     "first": "2025-04-14T20:47:44Z",
+     "last": "2026-10-31T01:59:50Z"
+    },
+    "Gate.io-linked": {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 238,
+     "amount_native": 28681951.5119004,
+     "first": "2025-05-12T12:36:57Z",
+     "last": "2026-10-15T21:00:20Z"
+    },
+    "Bitget": {
+     "address": "GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75",
+     "count": 54,
+     "amount_native": 7070102.922266402,
+     "first": "2025-05-15T08:33:45Z",
+     "last": "2026-10-02T08:19:02Z"
+    },
+    "MEXC": {
+     "address": "GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73",
+     "count": 35,
+     "amount_native": 1712257.76,
+     "first": "2025-05-11T11:04:22Z",
+     "last": "2026-10-11T02:49:58Z"
+    }
+   },
+   "outflow_to_exchanges_total_amount": 260627119.6633634,
+   "outflow_to_exchanges_total_count": 835,
+   "outflow_back_to_suspect_list": {
+    "count": 1,
+    "amount_native": 9.95,
+    "distinct": 1,
+    "detail": [
+     {
+      "address": "GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE",
+      "count": 1,
+      "amount_native": 9.95,
+      "first": "2025-07-26T01:02:01Z",
+      "last": "2025-07-26T01:02:01Z"
+     }
+    ]
+   },
+   "outflow_to_second_hop_set": {
+    "count": 0,
+    "amount_native": 0,
+    "distinct": 0,
+    "detail": []
+   },
+   "outflow_to_other_external": {
+    "count": 183,
+    "amount_native": 32869972.365325894,
+    "distinct": 69
+   },
+   "inflow_from_suspect_list": {
+    "count": 0,
+    "amount_native": 0,
+    "distinct": 0,
+    "detail": []
+   },
+   "inflow_from_second_hop_set": {
+    "count": 63,
+    "amount_native": 5087483.0,
+    "distinct": 1,
+    "detail": [
+     {
+      "address": "GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F",
+      "count": 63,
+      "amount_native": 5087483.0,
+      "first": "2025-07-21T10:46:24Z",
+      "last": "2026-09-15T07:40:12Z"
+     }
+    ]
+   },
+   "inflow_from_external": {
+    "count": 2390,
+    "amount_native": 299932459.2570494,
+    "distinct": 358
+   },
+   "top_out_destinations": [
+    {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 508,
+     "amount_native": 223162807.4691966,
+     "first": "2025-04-14T20:47:44Z",
+     "last": "2026-10-31T01:59:50Z"
+    },
+    {
+     "address": "GBC6NRTTQLRCABQHIR5J4R4YDJWFWRAO4ZRQIM2SVI5GSIZ2HZ42RINW",
+     "count": 238,
+     "amount_native": 28681951.5119004,
+     "first": "2025-05-12T12:36:57Z",
+     "last": "2026-10-15T21:00:20Z"
+    },
+    {
+     "address": "GBDCL7MLFVDZOEJB7X6R5UX2IFUMQXQ4SMDXYDI6I5IIZ33UQOCINVZP",
+     "count": 42,
+     "amount_native": 27830914.530000005,
+     "first": "2025-03-07T03:07:53Z",
+     "last": "2025-11-07T20:47:51Z"
+    },
+    {
+     "address": "GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75",
+     "count": 54,
+     "amount_native": 7070102.922266402,
+     "first": "2025-05-15T08:33:45Z",
+     "last": "2026-10-02T08:19:02Z"
+    },
+    {
+     "address": "GATOC5LCD5PVVG4IDCRRURWJMN3R7RLEUJMGAYMA5DGIJP2D46HAXCMA",
+     "count": 23,
+     "amount_native": 3800030.99,
+     "first": "2026-06-18T12:10:10Z",
+     "last": "2026-10-25T20:32:15Z"
+    },
+    {
+     "address": "GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73",
+     "count": 35,
+     "amount_native": 1712257.76,
+     "first": "2025-05-11T11:04:22Z",
+     "last": "2026-10-11T02:49:58Z"
+    },
+    {
+     "address": "GANWCM5YR6YWYTPA3FJYTTATGLXWCAVUX2JE5MJJPDGUPFMPRWF2CDQR",
+     "count": 2,
+     "amount_native": 1200100.0,
+     "first": "2026-08-06T19:22:19Z",
+     "last": "2026-08-06T19:51:53Z"
+    },
+    {
+     "address": "GAFI7I66DEZO3D35EEFWSVPQJOMH3WNRBJAUPW46ONVECJRDWNV2HJ5X",
+     "count": 3,
+     "amount_native": 20009.98,
+     "first": "2026-09-27T07:27:22Z",
+     "last": "2026-10-02T15:08:29Z"
+    },
+    {
+     "address": "GAASF5674MNQX3ZEILY6MKSXVIYNNKNT7KYQFXLKRHSSC46LNDXKKSL2",
+     "count": 3,
+     "amount_native": 9453.152674,
+     "first": "2025-07-22T02:39:41Z",
+     "last": "2025-12-10T01:52:25Z"
+    },
+    {
+     "address": "GBW5A4T4V3HUIWF67AQZIWW5EQT4P2VI7ZRKJO475K4H47KIAP5PB3TG",
+     "count": 14,
+     "amount_native": 3115.2544762,
+     "first": "2025-04-26T10:19:34Z",
+     "last": "2025-08-06T05:17:21Z"
+    },
+    {
+     "address": "GBCGBRB5NRBRAWSGHITXVKK5DCZXSRP25CQMT7JCQXBPP6GAH6JRCO53",
+     "count": 1,
+     "amount_native": 1082.0,
+     "first": "2025-07-06T07:25:51Z",
+     "last": "2025-07-06T07:25:51Z"
+    },
+    {
+     "address": "GDUVVL2DRXTYBENE47S3UVRZCKUFETFHGVSFOZVTETY235TI3ORH7FEV",
+     "count": 2,
+     "amount_native": 795.3210113,
+     "first": "2025-09-13T15:42:06Z",
+     "last": "2025-09-13T15:47:38Z"
+    },
+    {
+     "address": "GCG7QHCV3CLUDHRTD4XKLRYAUW2AHHJK5ASNST6ILA6JNNELHXZE5KVG",
+     "count": 1,
+     "amount_native": 536.6567288,
+     "first": "2025-06-24T01:11:08Z",
+     "last": "2025-06-24T01:11:08Z"
+    },
+    {
+     "address": "GAZBYKQ4N3NDZHQFU2N5ER75UXEM7CSBEUQNAZNLWKMOCCT77OOBBKNB",
+     "count": 1,
+     "amount_native": 514.3302848,
+     "first": "2025-10-06T15:23:28Z",
+     "last": "2025-10-06T15:23:28Z"
+    },
+    {
+     "address": "GC55OF3AAF2QTH5W4Z2XJ6RGAA7C3XJQSENHIQWCYK6ZZORPUZATD5MI",
+     "count": 4,
+     "amount_native": 485.512352,
+     "first": "2025-07-13T15:03:43Z",
+     "last": "2025-09-23T17:19:36Z"
+    }
+   ],
+   "top_in_sources": [
+    {
+     "address": "GALYJFJ5SVD45FBWN2GT4IW67SEZ3IBOFSBSPUFCWV427NBNLG3PXEQU",
+     "count": 406,
+     "amount_native": 263382412.86000004,
+     "first": "2025-03-06T11:45:51Z",
+     "last": "2026-10-30T09:59:20Z"
+    },
+    {
+     "address": "GBXHS6NJONBIDPXRQ4T7ZHUAR3U2MFQBDNL267O7DXVP5UBZ2FWUX7YD",
+     "count": 925,
+     "amount_native": 19771700.0,
+     "first": "2025-08-19T19:00:03Z",
+     "last": "2026-10-31T06:04:05Z"
+    },
+    {
+     "address": "GBDCL7MLFVDZOEJB7X6R5UX2IFUMQXQ4SMDXYDI6I5IIZ33UQOCINVZP",
+     "count": 18,
+     "amount_native": 7061984.4792,
+     "first": "2025-03-14T03:44:09Z",
+     "last": "2026-01-26T02:38:43Z"
+    },
+    {
+     "address": "GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F",
+     "count": 63,
+     "amount_native": 5087483.0,
+     "first": "2025-07-21T10:46:24Z",
+     "last": "2026-09-15T07:40:12Z"
+    },
+    {
+     "address": "GCHE7SZWOQXEQC7S3AYTPJAWVR4XBXPX4D22KWOT5HOTXC3R423E7PK7",
+     "count": 1,
+     "amount_native": 2900000.0,
+     "first": "2025-05-22T14:21:12Z",
+     "last": "2025-05-22T14:21:12Z"
+    },
+    {
+     "address": "GBI6S5DPHHGYUCK2ERZC5RRAXJZF4D52J7JR6XSKVEJUKH7IUHMDPKDE",
+     "count": 1,
+     "amount_native": 2860480.0,
+     "first": "2025-05-22T14:20:13Z",
+     "last": "2025-05-22T14:20:13Z"
+    },
+    {
+     "address": "GDFNWH6ZFJVHJDLBMNOUT35X4EEKQVJAO3ZDL4NL7VQJLC4PJOQFWJ75",
+     "count": 54,
+     "amount_native": 1197620.6728836992,
+     "first": "2025-05-23T08:30:37Z",
+     "last": "2026-10-08T16:12:05Z"
+    },
+    {
+     "address": "GC4YNAGKAKDH3MRGS7FMEBW6OKVLWLTHJOPEIWC5642I2Y5QL3TUKNQ7",
+     "count": 3,
+     "amount_native": 1000180.0,
+     "first": "2025-08-01T01:46:25Z",
+     "last": "2025-08-01T01:53:50Z"
+    },
+    {
+     "address": "GD5HGPHVL73EBDUD2Z4K2VDRLUBC4FFN7GOBLKPK6OPPXH6TED4TRK73",
+     "count": 7,
+     "amount_native": 791489.1743537999,
+     "first": "2025-07-31T08:44:02Z",
+     "last": "2026-10-02T13:58:07Z"
+    },
+    {
+     "address": "GATOC5LCD5PVVG4IDCRRURWJMN3R7RLEUJMGAYMA5DGIJP2D46HAXCMA",
+     "count": 24,
+     "amount_native": 718542.0,
+     "first": "2026-09-16T03:47:03Z",
+     "last": "2026-10-02T13:32:38Z"
+    }
+   ],
+   "in_minus_out_native": 11522840.278360188,
+   "balance_minus_in_minus_out": -9.189999587833881,
+   "verdict": "exchange-exit",
+   "outflow_to_exchanges_share_of_outflow": 0.8880057687325557,
+   "inflow_from_second_hop_set_share_of_inflow": 0.01667918157204496
+  }
+ },
+ "method_note": "Transport note: urllib consistently hit IncompleteRead truncation on this account's payment pages (even at limit=25; verified 2026-10-31), while curl and the requests library returned the identical pages successfully (284,726 bytes / 200 records for the first page). third_hop.py therefore uses requests as the HTTP transport; the Horizon API endpoints, paging (limit=200, asc), cap and aggregation method are identical to second_hop.py."
+}
