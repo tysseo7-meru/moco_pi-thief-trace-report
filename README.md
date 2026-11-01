@@ -4,6 +4,7 @@ Analysis of 8,132 Pi Network suspected addresses: group classification (Part 1),
 
 - Report (Japanese): [pi_thief_trace_report.html](./pi_thief_trace_report.html) — Web: https://tysseo7-meru.github.io/moco_pi-thief-trace-report/pi_thief_trace_report.html
 - Report (English): [pi_thief_trace_report_en.html](./pi_thief_trace_report_en.html) — Web: https://tysseo7-meru.github.io/moco_pi-thief-trace-report/pi_thief_trace_report_en.html
+- Report index (一覧): [index.html](./index.html) — Web: https://tysseo7-meru.github.io/moco_pi-thief-trace-report/
 - Analysing AI: Moko (Muse) / Model: Muse Spark 1.3
 - Target list: https://github.com/tysseo7/Pi-Thief-Trace/blob/main/findsp2.l_spam.txt
 
