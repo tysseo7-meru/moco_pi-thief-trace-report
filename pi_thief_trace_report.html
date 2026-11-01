@@ -16,7 +16,8 @@ table { border-collapse: collapse; width: 100%; min-width: 460px; margin: 1em 0;
 th, td { border: 1px solid #d8dce1; padding: 6px 8px; text-align: left; vertical-align: top; }
 th { background: #f0f2f5; }
 td.num { text-align: right; font-variant-numeric: tabular-nums; }
-.addr { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .78rem; word-break: break-all; display: block; width: 12ch; }
+td .addr, th .addr { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .78rem; word-break: break-all; display: block; width: 12ch; }
+.addrf { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .78rem; overflow-wrap: anywhere; }
 .meta { background: #f0f2f5; border-radius: 8px; padding: 14px 18px; font-size: .92rem; }
 .meta p { margin: .3em 0; }
 .note { background: #fff8e6; border: 1px solid #f0d98c; border-radius: 8px; padding: 10px 16px; font-size: .9rem; }
@@ -65,19 +66,19 @@ img { max-width: 100%; }
 
 <h2>2大ハブのアドレス帰属の根拠</h2>
 <p>本レポートでは、リスト内の2大ハブを「pi chain mall」「teltlk」と呼んでいる。その帰属の根拠をここに明示する。なお、ラベルが示すのは「その事業者自身が自分のウォレットだと公表しているアドレス」という事実までであり、それ自体が、運営者が個々の資金移動を指示したことの証明にはならない。出典ページが削除・変更される可能性に備え、各出典の保存コピー（PDF・画像）をこのサイト上に置く。</p>
-<h3>pi chain mall — <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span></h3>
+<h3>pi chain mall — <span class="addrf">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span></h3>
 <ul>
-<li>PiChain Global の公式ドキュメント（GitBook「PCM mainnet address」、<a href="https://pichain-global.gitbook.io/pichainmall/pcm-mainnet-address/pcm-mainnet-address" target="_blank" rel="noopener">PCM mainnet address（GitBook）</a>）には、PCM が自らの Pi を3つのメインネットウォレットに分散して保管していると明記されている。Wallet 1 が本アドレス <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span>、Wallet 2 が <span class="addr">GB7BHOTZXZXMSV7E22VAORD5PLOP7LMPKU2LO46DY27452PRQWSPRF67</span>、Wallet 3（Pi 出金用）が <span class="addr">GDUPXUGENG2YCX4BVYKS3LH4N4UT7BTYPMBOS5UCVTAX2E5IZ6VYLC4L</span> である。</li>
-<li>疑惑リスト 8,132 件との照合では、Wallet 1 と Wallet 2 は<strong>リストに含まれる</strong>。Wallet 3 は含まれない。さらに、pi chain mall の公式アカウント（@pichainmall）が 2022-10-01 に X で「Our mainnet wallet address is …」と公表したアドレス <span class="addr">GBCRZX73YTPTA7HSHVXNXYGJCUUKVUQMASELPXZ5WQVDUT7RLINS6N3Y</span>（Newsway の報道が引用）も<strong>リストに含まれる</strong>。一方、次項の 2025-07-11 の公式投稿で「従来のウォレット」とされた <span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span> と、同投稿で公表された新しいウォレット <span class="addr">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span> は、いずれもリストには含まれない。すなわち、公開情報で知られる PCM のウォレット 6 件のうち 3 件が疑惑リストのメンバーである。</li>
-<li>加えて一次資料として、@pichainmall の 2025-07-11 の X 投稿「PCM Wallet Update: New Fund Storage Pi Address Announced!」（<a href="https://x.com/pichainmall/status/1943569533316534274" target="_blank" rel="noopener">X投稿（@pichainmall、2025-07-11）</a>）は、本アドレス <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> と <span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span> を PCM の「従来の公開ウォレットアドレス（Previous Wallet Addresses (Public)）」として明示し、新しい資金保管ウォレットとして <span class="addr">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span> を公表した。投稿が挙げる交代の理由は、セキュリティの強化と資金管理の最適化である。この投稿のスクリーンショット（リスト作成者が提供）を下に保存する。これにより本アドレスの帰属は、PCM 自身の公式ドキュメントと公式投稿の双方で裏付けられる。</li>
+<li>PiChain Global の公式ドキュメント（GitBook「PCM mainnet address」、<a href="https://pichain-global.gitbook.io/pichainmall/pcm-mainnet-address/pcm-mainnet-address" target="_blank" rel="noopener">PCM mainnet address（GitBook）</a>）には、PCM が自らの Pi を3つのメインネットウォレットに分散して保管していると明記されている。Wallet 1 が本アドレス <span class="addrf">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span>、Wallet 2 が <span class="addrf">GB7BHOTZXZXMSV7E22VAORD5PLOP7LMPKU2LO46DY27452PRQWSPRF67</span>、Wallet 3（Pi 出金用）が <span class="addrf">GDUPXUGENG2YCX4BVYKS3LH4N4UT7BTYPMBOS5UCVTAX2E5IZ6VYLC4L</span> である。</li>
+<li>疑惑リスト 8,132 件との照合では、Wallet 1 と Wallet 2 は<strong>リストに含まれる</strong>。Wallet 3 は含まれない。さらに、pi chain mall の公式アカウント（@pichainmall）が 2022-10-01 に X で「Our mainnet wallet address is …」と公表したアドレス <span class="addrf">GBCRZX73YTPTA7HSHVXNXYGJCUUKVUQMASELPXZ5WQVDUT7RLINS6N3Y</span>（Newsway の報道が引用）も<strong>リストに含まれる</strong>。一方、次項の 2025-07-11 の公式投稿で「従来のウォレット」とされた <span class="addrf">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span> と、同投稿で公表された新しいウォレット <span class="addrf">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span> は、いずれもリストには含まれない。すなわち、公開情報で知られる PCM のウォレット 6 件のうち 3 件が疑惑リストのメンバーである。</li>
+<li>加えて一次資料として、@pichainmall の 2025-07-11 の X 投稿「PCM Wallet Update: New Fund Storage Pi Address Announced!」（<a href="https://x.com/pichainmall/status/1943569533316534274" target="_blank" rel="noopener">X投稿（@pichainmall、2025-07-11）</a>）は、本アドレス <span class="addrf">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> と <span class="addrf">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span> を PCM の「従来の公開ウォレットアドレス（Previous Wallet Addresses (Public)）」として明示し、新しい資金保管ウォレットとして <span class="addrf">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span> を公表した。投稿が挙げる交代の理由は、セキュリティの強化と資金管理の最適化である。この投稿のスクリーンショット（リスト作成者が提供）を下に保存する。これにより本アドレスの帰属は、PCM 自身の公式ドキュメントと公式投稿の双方で裏付けられる。</li>
 </ul>
 <p><img src="evidence_pcm_gitbook.png" alt="PiChain Global 公式ドキュメント「PCM mainnet address」の保存画像" style="max-width:100%;border:1px solid #d8dce1"></p>
 <p class="small">出典の保存コピー（PDF）：<a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_pcm_gitbook.pdf" target="_blank" rel="noopener">evidence_pcm_gitbook.pdf</a></p>
 <p><img src="evidence_pcm_x_post.jpg" alt="PiChain Global 公式 X 投稿（2025-07-11、ウォレット更新の告知）のスクリーンショット" style="max-width:min(92vw,400px);border:1px solid #d8dce1"></p>
 <p class="small">公式 X 投稿（2025-07-11）のスクリーンショット（リスト作成者提供）：<a href="https://x.com/pichainmall/status/1943569533316534274" target="_blank" rel="noopener">X投稿（@pichainmall、2025-07-11）</a></p>
-<h3>teltlk — <span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span></h3>
+<h3>teltlk — <span class="addrf">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span></h3>
 <ul>
-<li>一次資料は、TELTLK INTERNATIONAL の公式 X アカウント（@teltlkteam）が 2024-05-27 に投稿した「Regarding the Issue with Withdrawal of PI from TELTLK Addresses」（<a href="https://x.com/teltlkteam/status/1794924172805894278" target="_blank" rel="noopener">X投稿（@teltlkteam、2024-05-27）</a>）である。第1項では、TELTLK ユーザーの Pi 資産はすべて Pi ネットワーク上に保管されており、そのアドレスが本アドレス <span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span> であると明示されている。第2項から第6項では、当時は出金を処理できない問題があり、2024-05-23 に Pi Core Team（@picoreteam）へ報告したこと、同チームが調査中であること、早期解決を求めることが述べられている。下に保存したスクリーンショット（リスト作成者提供）が、この投稿である。</li>
+<li>一次資料は、TELTLK INTERNATIONAL の公式 X アカウント（@teltlkteam）が 2024-05-27 に投稿した「Regarding the Issue with Withdrawal of PI from TELTLK Addresses」（<a href="https://x.com/teltlkteam/status/1794924172805894278" target="_blank" rel="noopener">X投稿（@teltlkteam、2024-05-27）</a>）である。第1項では、TELTLK ユーザーの Pi 資産はすべて Pi ネットワーク上に保管されており、そのアドレスが本アドレス <span class="addrf">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span> であると明示されている。第2項から第6項では、当時は出金を処理できない問題があり、2024-05-23 に Pi Core Team（@picoreteam）へ報告したこと、同チームが調査中であること、早期解決を求めることが述べられている。下に保存したスクリーンショット（リスト作成者提供）が、この投稿である。</li>
 <li>この投稿は、上の URL で<strong>現在も公開されている</strong>。検索結果に現れないため長く削除されたと思われていたが、それは誤りだった。同日掲載の Binance Square 記事（インドネシアの Beritabulukumba.com の記事の転載「Regarding Alleged Pi Wallet Freezing, Teltlk International Urges Pi Network」、<a href="https://www.binance.com/en/square/post/8676920705321" target="_blank" rel="noopener">Binance Square の記事</a>）も、この同じ公表を報じた二次的な報道である。</li>
 <li>補足の文脈として、2024 年 5 月の報道（HokaNews／CoinGabbar）は、Teltlk が 1,800 万 Pi 超を保有すると公表したと伝えたが、アドレス自体は掲載されていない。</li>
 <li>なお、この出金障害は一時的なもので、現在は解消している。2026-11-01 の確認では残高は約 2,539 万 Pi で、2026-10-31 にも入金があり、直近の送金は 2026-10-26（50,000 Pi）で、アドレスは現在も活動している。</li>
@@ -127,13 +128,13 @@ img { max-width: 100%; }
 <h3>グループ1（巨大グループ）：8,126 アドレス</h3>
 <ul>
 <li>1アドレスあたり平均でリスト内 26.6 アドレスと送金関係を持つ。</li>
-<li>最大ハブ：<span class="addr">GCYGA2GHSEXGEWY5AO7JPAJZGKKCSZNAOOTHBXQDCUR6RWT7666IXBKX</span>（リスト内 2,205 ペアに関与）</li>
-<li>最多ペア：<span class="addr">GABGEE3UIGX3RZNWY7TGPWLFKVQOQEBHSZTP3Y65DSAUORYVMOQM5MM3</span> → <span class="addr">GDPYUVUM6MXY5RUAWPTATGVWNT34DSTDNC3J6KGD4EAVW36XTNQALX7N</span>（5,618 件、2022-10-20 〜 2023-01-05）</li>
+<li>最大ハブ：<span class="addrf">GCYGA2GHSEXGEWY5AO7JPAJZGKKCSZNAOOTHBXQDCUR6RWT7666IXBKX</span>（リスト内 2,205 ペアに関与）</li>
+<li>最多ペア：<span class="addrf">GABGEE3UIGX3RZNWY7TGPWLFKVQOQEBHSZTP3Y65DSAUORYVMOQM5MM3</span> → <span class="addrf">GDPYUVUM6MXY5RUAWPTATGVWNT34DSTDNC3J6KGD4EAVW36XTNQALX7N</span>（5,618 件、2022-10-20 〜 2023-01-05）</li>
 </ul>
 <h3>グループ2（小グループ）：3 アドレス</h3>
-<ul><li><span class="addr">GA23OVVVUBQ4GVU57MRPYR5M3J6IWGTYFKZTNOHMGP34WOYQQ2COMVJC</span></li><li><span class="addr">GBA4FSKGHYS5FJI2AXYQAQDHN6J64K5J4HGOCVJRSOMHRSITT6RQXCKR</span></li><li><span class="addr">GCMPYHMMBVXPQTH36ZZY36M3BYD24KGFVB52YBEASKCKYFHUBTZ3DULT</span></li></ul>
+<ul><li><span class="addrf">GA23OVVVUBQ4GVU57MRPYR5M3J6IWGTYFKZTNOHMGP34WOYQQ2COMVJC</span></li><li><span class="addrf">GBA4FSKGHYS5FJI2AXYQAQDHN6J64K5J4HGOCVJRSOMHRSITT6RQXCKR</span></li><li><span class="addrf">GCMPYHMMBVXPQTH36ZZY36M3BYD24KGFVB52YBEASKCKYFHUBTZ3DULT</span></li></ul>
 <h3>独立アドレス：3 アドレス</h3>
-<ul><li><span class="addr">GASI5VHBQIAQGCAT5LGZG3AWPSDEHDB2UUGRWVDNOLNTOHJ3RD5HB4KS</span>（全492件確認、リスト内送金 0）</li><li><span class="addr">GBBVVNPSCWICZOEZ3P3BSZAJEB7MZP27QQOU7XALFNDMKNBDFMFUHUIH</span>（全107件確認、リスト内送金 0）</li><li><span class="addr">GDP252PEO7OC2TJOZ34TZ7CPODLQFAKJYT4DQWFXRVEUBSQ3VMPRTYGL</span>（全105件確認、リスト内送金 0）</li></ul>
+<ul><li><span class="addrf">GASI5VHBQIAQGCAT5LGZG3AWPSDEHDB2UUGRWVDNOLNTOHJ3RD5HB4KS</span>（全492件確認、リスト内送金 0）</li><li><span class="addrf">GBBVVNPSCWICZOEZ3P3BSZAJEB7MZP27QQOU7XALFNDMKNBDFMFUHUIH</span>（全107件確認、リスト内送金 0）</li><li><span class="addrf">GDP252PEO7OC2TJOZ34TZ7CPODLQFAKJYT4DQWFXRVEUBSQ3VMPRTYGL</span>（全105件確認、リスト内送金 0）</li></ul>
 
 <h2>第2部：方向付き解析と資金移動の追跡</h2>
 <h3>方向付きの構造（強連結成分）</h3>
@@ -172,8 +173,8 @@ img { max-width: 100%; }
 <p>上位4先で流出総額の 61.7%。判明分は大手取引所のウォレットで、出口の動きは早いものでオープン化当日（開始約5時間後）から始まっている。取引所ラベルは第三者の調査報告（BWX8 調査レポート）や報道に基づくもので、取引所公式の公表ではない。</p>
 <h3>素性不明の集約先</h3>
 <ul>
-<li><span class="addr">GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722</span>：17,550,012 Pi のほぼ全額が単一の送金元 <span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span> から（209回、2025-02-23〜2026-10-26）。</li>
-<li><span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span>：13,821,491 Pi のうち 13,801,320 Pi が最大ハブ <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> から（585回）。なおこのアドレスは後に、pi chain mall の公式 X 投稿（2025-07-11）で PCM 自身の旧資金保管ウォレットとして公表されたもので、入金の大半が同じく PCM のウォレットである <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> からであることと合わせ、PCM のウォレット間の移動として整合する（帰属の根拠は「2大ハブのアドレス帰属の根拠」の節を参照）。</li>
+<li><span class="addrf">GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722</span>：17,550,012 Pi のほぼ全額が単一の送金元 <span class="addrf">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span> から（209回、2025-02-23〜2026-10-26）。</li>
+<li><span class="addrf">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span>：13,821,491 Pi のうち 13,801,320 Pi が最大ハブ <span class="addrf">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> から（585回）。なおこのアドレスは後に、pi chain mall の公式 X 投稿（2025-07-11）で PCM 自身の旧資金保管ウォレットとして公表されたもので、入金の大半が同じく PCM のウォレットである <span class="addrf">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> からであることと合わせ、PCM のウォレット間の移動として整合する（帰属の根拠は「2大ハブのアドレス帰属の根拠」の節を参照）。</li>
 </ul>
 <h3>上位の出口アドレス（リスト内）</h3>
 <div class="tw"><table>
@@ -209,7 +210,7 @@ img { max-width: 100%; }
 <tr><td><span class="addr">GBRGJJLLNUKRDX7BHONUK2U3P73GVXVYE5ERNLYIPDUZIOMSDJ4TICYC</span></td><td class="num">92,564</td><td>2 件</td><td class="num">88,604</td></tr>
 <tr><td><span class="addr">GCNATGQNE46TDRJVPMRWL2ISXB4QZIQHCOAWYKLUUVAPLHT2NDQFVLWP</span></td><td class="num">32,132</td><td>7 件</td><td class="num">28,002</td></tr>
 </table></div>
-<p>一方、最大ハブ <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> は全期間で入金・出金とも約 4,726 万 Pi の通過点であり（残高 2,923 Pi）、溜め込みではない。「リスト内で受け取り専用＝終着点」とは限らない。</p>
+<p>一方、最大ハブ <span class="addrf">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> は全期間で入金・出金とも約 4,726 万 Pi の通過点であり（残高 2,923 Pi）、溜め込みではない。「リスト内で受け取り専用＝終着点」とは限らない。</p>
 
 
 <h3>出口の先の追跡（第2ホップ）</h3>
@@ -225,17 +226,17 @@ img { max-width: 100%; }
 </table></div>
 <h3>対象ごとの所見</h3>
 <ul>
-<li><span class="addr">GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722</span>：滞留ではない。入金の大半を136,410件の小口送金に分解して10,892の宛先へ分散した。取引所へ直接出たのは送金の約1.8%のみで、リスト内への復帰も31,135件・713アドレスある。通過点であり終着点ではない。</li>
-<li><span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span>：滞留ではない。111,391件の送金で6,771先へ分散し、リスト内ハブ GDGVILYX4RAT… へ28,729件・5,113,374 Pi を戻すなどリストとの循環が大きい。GANHBPJHHE6A… とも双方向の循環がある。なおこのアドレスは後に、pi chain mall の公式 X 投稿（2025-07-11）で PCM 自身の旧資金保管ウォレットとして公表された。入金の太宗を占める GDGVILYX4RAT… も PCM のウォレットであり（「2大ハブのアドレス帰属の根拠」の節）、ここで見た循環は PCM の自社ウォレット間の移動として整合する。ただし、公表されたラベルは個々のフローを誰が指示したかの証明にはならない。</li>
-<li><span class="addr">GDIOBGWJZC7CZW32J3GAYUZGYGI5X3MK3O2W5KPF2OUPHCX3ZOYLLD24</span>：payment送金の99.96%が取引所宛（Gate.io関連 4,450,200 Pi／OKX 1,030,000 Pi）。ただし残高との間に約795万 Pi の不整合があり、/operations を確認したところ payments 対象外の create_claimable_balance 61件・claim 58件が存在する。この経由分が差の主因とみられ、全額が取引所へ出たとは断定できない。</li>
-<li><span class="addr">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span>：入金の約54%が残高として滞留する一方、送金の大半は GAL4NDELSPS2… への循環（3,780,000 Pi）と Gate.io関連への出口（1,200,040 Pi）、リスト内ハブへの復帰（1,050,002 Pi）。純粋な終着点でも単なる通過点でもない。なおこのアドレスは、pi chain mall の公式 X 投稿（2025-07-11）で、GDGV…・GAL4… に代わる PCM の新しい資金保管ウォレットとして公表されたものである。残高の滞留と GAL4…（旧ウォレット）との往来は、このウォレット交代に伴う PCM 自社内の移動として整合する。</li>
-<li><span class="addr">GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F</span>：残高は16,165 Piのみ。送金の67%は未知アドレス GDGII3Q2US4L… への 5,087,483 Pi で、後述の第3ホップ追跡で扱った。OKXへ 1,244,772 Pi、GCQH27CCPDZ… へ 1,100,000 Pi（GCQHとは相互送金）。</li>
-<li><span class="addr">GD24QVE4R42E4XRDF6T5IN6UAQLD2WN7OQGUC2FBHFUUZM7GLE4KG6YA</span>：49,598の送付元から130,657件で集めた 46,307,778 Pi のほぼ全額を、単一の外部アドレス GDL66HS4YTUL… へ9,508件で送金。取引所宛・リスト復帰はゼロ。ただしリスト由来の入金は1,054,409 Pi（全体の約2.3%）のみで、入金元には取引所ウォレット自体も含まれるため、このアドレス自体はリストと関連の薄い大規模中継とみられる。</li>
+<li><span class="addrf">GCQH27CCPDZGYFYD6U5RDK3E2THFATTE2XFSYZRALXZ6XUW42CSE4722</span>：滞留ではない。入金の大半を136,410件の小口送金に分解して10,892の宛先へ分散した。取引所へ直接出たのは送金の約1.8%のみで、リスト内への復帰も31,135件・713アドレスある。通過点であり終着点ではない。</li>
+<li><span class="addrf">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span>：滞留ではない。111,391件の送金で6,771先へ分散し、リスト内ハブ GDGVILYX4RAT… へ28,729件・5,113,374 Pi を戻すなどリストとの循環が大きい。GANHBPJHHE6A… とも双方向の循環がある。なおこのアドレスは後に、pi chain mall の公式 X 投稿（2025-07-11）で PCM 自身の旧資金保管ウォレットとして公表された。入金の太宗を占める GDGVILYX4RAT… も PCM のウォレットであり（「2大ハブのアドレス帰属の根拠」の節）、ここで見た循環は PCM の自社ウォレット間の移動として整合する。ただし、公表されたラベルは個々のフローを誰が指示したかの証明にはならない。</li>
+<li><span class="addrf">GDIOBGWJZC7CZW32J3GAYUZGYGI5X3MK3O2W5KPF2OUPHCX3ZOYLLD24</span>：payment送金の99.96%が取引所宛（Gate.io関連 4,450,200 Pi／OKX 1,030,000 Pi）。ただし残高との間に約795万 Pi の不整合があり、/operations を確認したところ payments 対象外の create_claimable_balance 61件・claim 58件が存在する。この経由分が差の主因とみられ、全額が取引所へ出たとは断定できない。</li>
+<li><span class="addrf">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span>：入金の約54%が残高として滞留する一方、送金の大半は GAL4NDELSPS2… への循環（3,780,000 Pi）と Gate.io関連への出口（1,200,040 Pi）、リスト内ハブへの復帰（1,050,002 Pi）。純粋な終着点でも単なる通過点でもない。なおこのアドレスは、pi chain mall の公式 X 投稿（2025-07-11）で、GDGV…・GAL4… に代わる PCM の新しい資金保管ウォレットとして公表されたものである。残高の滞留と GAL4…（旧ウォレット）との往来は、このウォレット交代に伴う PCM 自社内の移動として整合する。</li>
+<li><span class="addrf">GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F</span>：残高は16,165 Piのみ。送金の67%は未知アドレス GDGII3Q2US4L… への 5,087,483 Pi で、後述の第3ホップ追跡で扱った。OKXへ 1,244,772 Pi、GCQH27CCPDZ… へ 1,100,000 Pi（GCQHとは相互送金）。</li>
+<li><span class="addrf">GD24QVE4R42E4XRDF6T5IN6UAQLD2WN7OQGUC2FBHFUUZM7GLE4KG6YA</span>：49,598の送付元から130,657件で集めた 46,307,778 Pi のほぼ全額を、単一の外部アドレス GDL66HS4YTUL… へ9,508件で送金。取引所宛・リスト復帰はゼロ。ただしリスト由来の入金は1,054,409 Pi（全体の約2.3%）のみで、入金元には取引所ウォレット自体も含まれるため、このアドレス自体はリストと関連の薄い大規模中継とみられる。</li>
 </ul>
 <p>結論として、主要2件（GCQH…、GAL4…）はいずれも溜め込みではなく、入った額とほぼ同額を多数の小口送金に分解して流す通過・分散の拠点だった。6件のうち大きな滞留があったのは GANH… のみで、GDIO… は取引所出口型だが claimable balance 由来の差のため断定には留保が付く。</p>
 
 <h3>第3ホップ（GDGII…）</h3>
-<p>前項の第2ホップ追跡で GCP3OIKPKX2Y… の最大の送り先だった未知アドレス <span class="addr">GDGII3Q2US4L4NQSR3PYVXMLDEVGEIJA27A3LOFANWTLME2Q5IURFOFM</span> について、同様に全期間の payments を取得して追跡した（取得レコード 3,472件、HTTP 429 なし、上限到達なし）。</p>
+<p>前項の第2ホップ追跡で GCP3OIKPKX2Y… の最大の送り先だった未知アドレス <span class="addrf">GDGII3Q2US4L4NQSR3PYVXMLDEVGEIJA27A3LOFANWTLME2Q5IURFOFM</span> について、同様に全期間の payments を取得して追跡した（取得レコード 3,472件、HTTP 429 なし、上限到達なし）。</p>
 <ul>
 <li>入金総額：<strong>305,019,942 Pi</strong>（2,453件、送付元 359件）／送金総額：<strong>293,497,102 Pi</strong>（1,019件、宛先 74件）／現在残高：<strong>11,522,831 Pi</strong>（全入金の約3.8%）。</li>
 <li>取引所への送金：合計 <strong>260,627,120 Pi</strong>（送金の約88.8%）— OKX 223,162,807 Pi、Gate.io関連 28,681,952 Pi、Bitget 7,070,103 Pi、MEXC 1,712,258 Pi。</li>
@@ -247,7 +248,7 @@ img { max-width: 100%; }
 
 
 <h2>第3部：ハブへの流入の検証（被害者ホップ）</h2>
-<p>リスト作成の考え方では、抜き取り型の送金は「リスト外の被害者アドレス → リスト内のアドレス」というホップで発生する。そこで、リスト内の2大ハブである pi chain mall（<span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span>）と teltlk（<span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span>）について、<strong>リスト外</strong>の送り元全員にリスト作成者の元の3条件をそのまま適用し、ドレイン型の流入が実在するかを検証した。両ハブの全履歴を取得し（HTTP 429 なし、エラー 0、上限到達なし）、リスト外の送り元は重複を除いて 21,141 件、全件を走査した。</p>
+<p>リスト作成の考え方では、抜き取り型の送金は「リスト外の被害者アドレス → リスト内のアドレス」というホップで発生する。そこで、リスト内の2大ハブである pi chain mall（<span class="addrf">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span>）と teltlk（<span class="addrf">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span>）について、<strong>リスト外</strong>の送り元全員にリスト作成者の元の3条件をそのまま適用し、ドレイン型の流入が実在するかを検証した。両ハブの全履歴を取得し（HTTP 429 なし、エラー 0、上限到達なし）、リスト外の送り元は重複を除いて 21,141 件、全件を走査した。</p>
 <div class="note">
 <p><strong>位置づけの区別（重要）：</strong>この部で条件に一致した送り元は、資金を抜き取られた側とみられる<strong>被害者候補</strong>であり、本レポートの対象である疑惑アドレス 8,132 件（抜き取りの受け取り側）とは正反対の立場である。<strong>疑惑リストへの追加ではない</strong>し、一致したアドレスを疑惑アドレスとして扱うものでもない。</p>
 </div>
@@ -290,7 +291,7 @@ img { max-width: 100%; }
 <h2>限界・注意</h2>
 <div class="note">
 <ul>
-<li>第1部の分類で取得できなかった1アカウント（<span class="addr">GCWY2CAUXY3DTFINS7B7B2PNJJVSLAPLBZBXXOOLQ3FF6OWB6I5BTP4S</span>）は相手側の履歴からグループ1所属を確認済みで、判定への影響はない。</li>
+<li>第1部の分類で取得できなかった1アカウント（<span class="addrf">GCWY2CAUXY3DTFINS7B7B2PNJJVSLAPLBZBXXOOLQ3FF6OWB6I5BTP4S</span>）は相手側の履歴からグループ1所属を確認済みで、判定への影響はない。</li>
 <li>67 アカウントは payments が 20,200 件を超え古い順で打ち切った。影響はグループ1内部の件数の過小評価のみで、グループ分割や独立判定には影響しない。</li>
 <li>第1部では金額合計を出していない（資産種別を区別せず集計したため）。第2部の金額は native（Pi）のみで集計している。</li>
 <li>出口スキャンは「リスト内→リスト外」の native 送金のみ。外部の第2段階の移動や、オープン化前のリスト外送金は含まない。</li>
