@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pi 疑惑アドレス解析レポート（分類＋方向付き解析と資金移動の追跡＋被害者ホップ検証）</title>
 <style>
-body { font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 0; background: #f6f7f9; color: #1a1d21; line-height: 1.7; }
+body { font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 0; background: #f6f7f9; color: #1a1d21; line-height: 1.7; overflow-x: hidden; }
 main { max-width: 980px; margin: 0 auto; padding: 24px 18px 64px; background: #fff; }
 h1 { font-size: 1.5rem; line-height: 1.4; }
 h2 { margin-top: 2.2em; border-bottom: 2px solid #e3e6ea; padding-bottom: .3em; font-size: 1.2rem; }
@@ -20,8 +20,10 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
 .meta { background: #f0f2f5; border-radius: 8px; padding: 14px 18px; font-size: .92rem; }
 .meta p { margin: .3em 0; }
 .note { background: #fff8e6; border: 1px solid #f0d98c; border-radius: 8px; padding: 10px 16px; font-size: .9rem; }
-a { color: #0b5cad; }
-.small { font-size: .85rem; color: #555; }
+a { color: #0b5cad; overflow-wrap: anywhere; }
+code { overflow-wrap: anywhere; }
+img { max-width: 100%; }
+.small { font-size: .85rem; color: #555; overflow-wrap: anywhere; }
 </style>
 </head>
 <body>
@@ -65,23 +67,23 @@ a { color: #0b5cad; }
 <p>本レポートでは、リスト内の2大ハブを「pi chain mall」「teltlk」と呼んでいる。その帰属の根拠をここに明示する。なお、ラベルが示すのは「その事業者自身が自分のウォレットだと公表しているアドレス」という事実までであり、それ自体が、運営者が個々の資金移動を指示したことの証明にはならない。出典ページが削除・変更される可能性に備え、各出典の保存コピー（PDF・画像）をこのサイト上に置く。</p>
 <h3>pi chain mall — <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span></h3>
 <ul>
-<li>PiChain Global の公式ドキュメント（GitBook「PCM mainnet address」、<a href="https://pichain-global.gitbook.io/pichainmall/pcm-mainnet-address/pcm-mainnet-address" target="_blank" rel="noopener">https://pichain-global.gitbook.io/pichainmall/pcm-mainnet-address/pcm-mainnet-address</a>）には、PCM が自らの Pi を3つのメインネットウォレットに分散して保管していると明記されている。Wallet 1 が本アドレス <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span>、Wallet 2 が <span class="addr">GB7BHOTZXZXMSV7E22VAORD5PLOP7LMPKU2LO46DY27452PRQWSPRF67</span>、Wallet 3（Pi 出金用）が <span class="addr">GDUPXUGENG2YCX4BVYKS3LH4N4UT7BTYPMBOS5UCVTAX2E5IZ6VYLC4L</span> である。</li>
+<li>PiChain Global の公式ドキュメント（GitBook「PCM mainnet address」、<a href="https://pichain-global.gitbook.io/pichainmall/pcm-mainnet-address/pcm-mainnet-address" target="_blank" rel="noopener">PCM mainnet address（GitBook）</a>）には、PCM が自らの Pi を3つのメインネットウォレットに分散して保管していると明記されている。Wallet 1 が本アドレス <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span>、Wallet 2 が <span class="addr">GB7BHOTZXZXMSV7E22VAORD5PLOP7LMPKU2LO46DY27452PRQWSPRF67</span>、Wallet 3（Pi 出金用）が <span class="addr">GDUPXUGENG2YCX4BVYKS3LH4N4UT7BTYPMBOS5UCVTAX2E5IZ6VYLC4L</span> である。</li>
 <li>疑惑リスト 8,132 件との照合では、Wallet 1 と Wallet 2 は<strong>リストに含まれる</strong>。Wallet 3 は含まれない。さらに、pi chain mall の公式アカウント（@pichainmall）が 2022-10-01 に X で「Our mainnet wallet address is …」と公表したアドレス <span class="addr">GBCRZX73YTPTA7HSHVXNXYGJCUUKVUQMASELPXZ5WQVDUT7RLINS6N3Y</span>（Newsway の報道が引用）も<strong>リストに含まれる</strong>。一方、次項の 2025-07-11 の公式投稿で「従来のウォレット」とされた <span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span> と、同投稿で公表された新しいウォレット <span class="addr">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span> は、いずれもリストには含まれない。すなわち、公開情報で知られる PCM のウォレット 6 件のうち 3 件が疑惑リストのメンバーである。</li>
-<li>加えて一次資料として、@pichainmall の 2025-07-11 の X 投稿「PCM Wallet Update: New Fund Storage Pi Address Announced!」（<a href="https://x.com/pichainmall/status/1943569533316534274" target="_blank" rel="noopener">https://x.com/pichainmall/status/1943569533316534274</a>）は、本アドレス <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> と <span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span> を PCM の「従来の公開ウォレットアドレス（Previous Wallet Addresses (Public)）」として明示し、新しい資金保管ウォレットとして <span class="addr">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span> を公表した。投稿が挙げる交代の理由は、セキュリティの強化と資金管理の最適化である。この投稿のスクリーンショット（リスト作成者が提供）を下に保存する。これにより本アドレスの帰属は、PCM 自身の公式ドキュメントと公式投稿の双方で裏付けられる。</li>
+<li>加えて一次資料として、@pichainmall の 2025-07-11 の X 投稿「PCM Wallet Update: New Fund Storage Pi Address Announced!」（<a href="https://x.com/pichainmall/status/1943569533316534274" target="_blank" rel="noopener">X投稿（@pichainmall、2025-07-11）</a>）は、本アドレス <span class="addr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> と <span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span> を PCM の「従来の公開ウォレットアドレス（Previous Wallet Addresses (Public)）」として明示し、新しい資金保管ウォレットとして <span class="addr">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span> を公表した。投稿が挙げる交代の理由は、セキュリティの強化と資金管理の最適化である。この投稿のスクリーンショット（リスト作成者が提供）を下に保存する。これにより本アドレスの帰属は、PCM 自身の公式ドキュメントと公式投稿の双方で裏付けられる。</li>
 </ul>
 <p><img src="evidence_pcm_gitbook.png" alt="PiChain Global 公式ドキュメント「PCM mainnet address」の保存画像" style="max-width:100%;border:1px solid #d8dce1"></p>
 <p class="small">出典の保存コピー（PDF）：<a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_pcm_gitbook.pdf" target="_blank" rel="noopener">evidence_pcm_gitbook.pdf</a></p>
 <p><img src="evidence_pcm_x_post.jpg" alt="PiChain Global 公式 X 投稿（2025-07-11、ウォレット更新の告知）のスクリーンショット" style="max-width:min(92vw,400px);border:1px solid #d8dce1"></p>
-<p class="small">公式 X 投稿（2025-07-11）のスクリーンショット（リスト作成者提供）：<a href="https://x.com/pichainmall/status/1943569533316534274" target="_blank" rel="noopener">https://x.com/pichainmall/status/1943569533316534274</a></p>
+<p class="small">公式 X 投稿（2025-07-11）のスクリーンショット（リスト作成者提供）：<a href="https://x.com/pichainmall/status/1943569533316534274" target="_blank" rel="noopener">X投稿（@pichainmall、2025-07-11）</a></p>
 <h3>teltlk — <span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span></h3>
 <ul>
-<li>一次資料は、TELTLK INTERNATIONAL の公式 X アカウント（@teltlkteam）が 2024-05-27 に投稿した「Regarding the Issue with Withdrawal of PI from TELTLK Addresses」（<a href="https://x.com/teltlkteam/status/1794924172805894278" target="_blank" rel="noopener">https://x.com/teltlkteam/status/1794924172805894278</a>）である。第1項では、TELTLK ユーザーの Pi 資産はすべて Pi ネットワーク上に保管されており、そのアドレスが本アドレス <span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span> であると明示されている。第2項から第6項では、当時は出金を処理できない問題があり、2024-05-23 に Pi Core Team（@picoreteam）へ報告したこと、同チームが調査中であること、早期解決を求めることが述べられている。下に保存したスクリーンショット（リスト作成者提供）が、この投稿である。</li>
-<li>この投稿は、上の URL で<strong>現在も公開されている</strong>。検索結果に現れないため長く削除されたと思われていたが、それは誤りだった。同日掲載の Binance Square 記事（インドネシアの Beritabulukumba.com の記事の転載「Regarding Alleged Pi Wallet Freezing, Teltlk International Urges Pi Network」、<a href="https://www.binance.com/en/square/post/8676920705321" target="_blank" rel="noopener">https://www.binance.com/en/square/post/8676920705321</a>）も、この同じ公表を報じた二次的な報道である。</li>
+<li>一次資料は、TELTLK INTERNATIONAL の公式 X アカウント（@teltlkteam）が 2024-05-27 に投稿した「Regarding the Issue with Withdrawal of PI from TELTLK Addresses」（<a href="https://x.com/teltlkteam/status/1794924172805894278" target="_blank" rel="noopener">X投稿（@teltlkteam、2024-05-27）</a>）である。第1項では、TELTLK ユーザーの Pi 資産はすべて Pi ネットワーク上に保管されており、そのアドレスが本アドレス <span class="addr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span> であると明示されている。第2項から第6項では、当時は出金を処理できない問題があり、2024-05-23 に Pi Core Team（@picoreteam）へ報告したこと、同チームが調査中であること、早期解決を求めることが述べられている。下に保存したスクリーンショット（リスト作成者提供）が、この投稿である。</li>
+<li>この投稿は、上の URL で<strong>現在も公開されている</strong>。検索結果に現れないため長く削除されたと思われていたが、それは誤りだった。同日掲載の Binance Square 記事（インドネシアの Beritabulukumba.com の記事の転載「Regarding Alleged Pi Wallet Freezing, Teltlk International Urges Pi Network」、<a href="https://www.binance.com/en/square/post/8676920705321" target="_blank" rel="noopener">Binance Square の記事</a>）も、この同じ公表を報じた二次的な報道である。</li>
 <li>補足の文脈として、2024 年 5 月の報道（HokaNews／CoinGabbar）は、Teltlk が 1,800 万 Pi 超を保有すると公表したと伝えたが、アドレス自体は掲載されていない。</li>
 <li>なお、この出金障害は一時的なもので、現在は解消している。2026-11-01 の確認では残高は約 2,539 万 Pi で、2026-10-31 にも入金があり、直近の送金は 2026-10-26（50,000 Pi）で、アドレスは現在も活動している。</li>
 </ul>
 <p><img src="evidence_teltlk_x_post.jpg" alt="TELTLK INTERNATIONAL 公式 X 投稿（2024-05-27）のスクリーンショット" style="max-width:min(92vw,400px);border:1px solid #d8dce1"></p>
-<p class="small">公式 X 投稿（2024-05-27）のスクリーンショット（リスト作成者提供）：<a href="https://x.com/teltlkteam/status/1794924172805894278" target="_blank" rel="noopener">https://x.com/teltlkteam/status/1794924172805894278</a> ／ 全文のスクリーンショット：<a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_teltlk_x_post2.jpg" target="_blank" rel="noopener">evidence_teltlk_x_post2.jpg</a></p>
+<p class="small">公式 X 投稿（2024-05-27）のスクリーンショット（リスト作成者提供）：<a href="https://x.com/teltlkteam/status/1794924172805894278" target="_blank" rel="noopener">X投稿（@teltlkteam、2024-05-27）</a> ／ 全文のスクリーンショット：<a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_teltlk_x_post2.jpg" target="_blank" rel="noopener">evidence_teltlk_x_post2.jpg</a></p>
 <p><img src="evidence_teltlk_binance.png" alt="Binance Square 記事（Teltlk のウォレット公表）の保存画像" style="max-width:100%;border:1px solid #d8dce1"></p>
 <p class="small">出典の保存コピー（PDF）：<a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_teltlk_binance.pdf" target="_blank" rel="noopener">evidence_teltlk_binance.pdf</a></p>
 
