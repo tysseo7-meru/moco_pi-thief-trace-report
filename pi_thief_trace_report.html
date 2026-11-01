@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pi 疑惑アドレス解析レポート（分類＋方向付き解析と資金移動の追跡＋被害者ホップ検証）</title>
 <style>
+:root { color-scheme: light dark; }
 body { font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 0; background: #f6f7f9; color: #1a1d21; line-height: 1.7; overflow-x: hidden; }
 main { max-width: 980px; margin: 0 auto; padding: 24px 18px 64px; background: #fff; }
 h1 { font-size: 1.5rem; line-height: 1.4; }
@@ -27,6 +28,19 @@ a { color: #0b5cad; overflow-wrap: anywhere; }
 code { overflow-wrap: anywhere; }
 img { max-width: 100%; }
 .small { font-size: .85rem; color: #555; overflow-wrap: anywhere; }
+@media (prefers-color-scheme: dark) {
+  body { background: #121212; color: #e8e8e8; }
+  main { background: #1a1a1a; }
+  h2 { border-bottom-color: #3a3a3a; }
+  th, td { border-color: #3d3d3d; }
+  th { background: #262626; }
+  .meta { background: #242424; }
+  .note { background: #2b2410; border-color: #8a7420; }
+  a { color: #7cc4ff; }
+  .small { color: #a8a8a8; }
+  .pcmaddr { color: #ce93d8; }
+  .teladdr { color: #66bb6a; }
+}
 </style>
 </head>
 <body>
