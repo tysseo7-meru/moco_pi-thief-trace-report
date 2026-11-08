@@ -95,12 +95,12 @@ img { max-width: 100%; }
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/exit_by_sender.json" target="_blank" rel="noopener">exit_by_sender.json</a></td><td>847 KB</td><td>出口アドレス完全集計（5,419件）</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/exit_by_destination.json" target="_blank" rel="noopener">exit_by_destination.json</a></td><td>4472 KB</td><td>外部送金先 完全集計（28,155件）</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/directed_metrics.json" target="_blank" rel="noopener">directed_metrics.json</a></td><td>3490 KB</td><td>方向付き指標（全アドレス）</td></tr>
-<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/second_hop.json" target="_blank" rel="noopener">second_hop.json</a></td><td>34 KB</td><td>第2ホップ追跡データ（未知集約先6件、全期間集計）</td></tr>
-<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/second_hop_summary.txt" target="_blank" rel="noopener">second_hop_summary.txt</a></td><td>12 KB</td><td>第2ホップ追跡サマリー（テキスト）</td></tr>
-<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/third_hop.json" target="_blank" rel="noopener">third_hop.json</a></td><td>10 KB</td><td>第3ホップ追跡データ（GDGII…、全期間集計）</td></tr>
-<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/third_hop_summary.txt" target="_blank" rel="noopener">third_hop_summary.txt</a></td><td>6 KB</td><td>第3ホップ追跡サマリー（テキスト）</td></tr>
-<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/victim_hop.json" target="_blank" rel="noopener">victim_hop.json</a></td><td>12 KB</td><td>被害者ホップ検証データ（リスト外送り元21,141件、元の3条件＋effects）</td></tr>
-<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/victim_hop_summary.txt" target="_blank" rel="noopener">victim_hop_summary.txt</a></td><td>6 KB</td><td>被害者ホップ検証サマリー（テキスト）</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/second_hop.json" target="_blank" rel="noopener">second_hop.json</a></td><td>34 KB</td><td>出口の先の追跡データ（未知集約先6件、全期間集計）</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/second_hop_summary.txt" target="_blank" rel="noopener">second_hop_summary.txt</a></td><td>12 KB</td><td>出口の先の追跡サマリー（テキスト）</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/third_hop.json" target="_blank" rel="noopener">third_hop.json</a></td><td>10 KB</td><td>さらに先の追跡データ（GDGII…、全期間集計）</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/third_hop_summary.txt" target="_blank" rel="noopener">third_hop_summary.txt</a></td><td>6 KB</td><td>さらに先の追跡サマリー（テキスト）</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/victim_hop.json" target="_blank" rel="noopener">victim_hop.json</a></td><td>12 KB</td><td>被害者からの送金の検証データ（リスト外送り元21,141件、元の3条件＋effects）</td></tr>
+<tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/victim_hop_summary.txt" target="_blank" rel="noopener">victim_hop_summary.txt</a></td><td>6 KB</td><td>被害者からの送金の検証サマリー（テキスト）</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_pcm_gitbook.pdf" target="_blank" rel="noopener">evidence_pcm_gitbook.pdf</a></td><td>77 KB</td><td>pi chain mall 帰属根拠：公式ドキュメント「PCM mainnet address」の保存コピー（PDF）</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_teltlk_binance.pdf" target="_blank" rel="noopener">evidence_teltlk_binance.pdf</a></td><td>761 KB</td><td>teltlk 帰属根拠：Binance Square 記事の保存コピー（PDF）</td></tr>
 <tr><td><a href="https://tysseo7-meru.github.io/moco_pi-thief-trace-report/evidence_pcm_x_post.jpg" target="_blank" rel="noopener">evidence_pcm_x_post.jpg</a></td><td>212 KB</td><td>pi chain mall 帰属根拠：公式 X 投稿（2025-07-11、ウォレット更新の告知）のスクリーンショット（リスト作成者提供、JPEG）</td></tr>
@@ -198,7 +198,7 @@ img { max-width: 100%; }
 <p>一方、最大ハブ <span class="addrf pcmaddr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span> は全期間で入金・出金とも約 4,726 万 Pi の通過点であり（残高 2,923 Pi）、溜め込みではない。「リスト内で受け取り専用＝終着点」とは限らない。</p>
 
 
-<h3>出口の先の追跡（第2ホップ）</h3>
+<h3>出口の先の追跡</h3>
 <p>出口スキャンで素性不明のまま残った大口の集約先について、その先の動きを追跡した。対象は、リスト外への流出先のうち取引所と判明していない上位6件。全期間の payments を取得し（HTTP 429 なし、全6件完了、上限到達なし）、native（Pi）のみで集計した。金額は全期間合計であり、上記の出口スキャン（2025-02-20以降のみ）とは範囲が異なるため、各アドレスの入金総額は出口スキャンでの受取額より大きい。取引所ラベルは第三者の調査報告や報道に基づくもので、取引所公式の公表ではない。</p>
 <div class="tw"><table>
 <tr><th>アドレス</th><th>判定</th><th>現在残高 (Pi)</th><th>入金総額 (Pi)</th><th>送金総額 (Pi)</th><th>取引所宛 (Pi)</th><th>リスト復帰 (Pi)</th><th>備考</th></tr>
@@ -206,7 +206,7 @@ img { max-width: 100%; }
 <tr><td><span class="addr">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span></td><td>通過・循環型</td><td class="num">37,997</td><td class="num">26,394,225</td><td class="num">26,355,413</td><td class="num">2,994,249</td><td class="num">7,897,275</td><td>リスト復帰が大きく、ハブ GDGVILYX4RAT… へ 5,113,374 Pi を送り返す循環（後に PCM の旧ウォレットと判明）</td></tr>
 <tr><td><span class="addr">GDIOBGWJZC7CZW32J3GAYUZGYGI5X3MK3O2W5KPF2OUPHCX3ZOYLLD24</span></td><td>取引所出口型（留保付き）</td><td class="num">749</td><td class="num">13,433,254</td><td class="num">5,482,504</td><td class="num">5,480,200</td><td class="num">2,003</td><td>payment送金の99.96%が取引所宛。ただし claimable balance 由来の約795万 Pi の残高差あり</td></tr>
 <tr><td><span class="addr">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span></td><td>混合型（半分滞留＋循環）</td><td class="num">7,061,704</td><td class="num">13,093,557</td><td class="num">6,031,483</td><td class="num">1,200,040</td><td class="num">1,050,002</td><td>入金の約54%が残高として滞留。GAL4… へ 3,780,000 Pi の循環も（後に PCM の新ウォレットと判明）</td></tr>
-<tr><td><span class="addr">GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F</span></td><td>通過型</td><td class="num">16,165</td><td class="num">7,603,294</td><td class="num">7,587,129</td><td class="num">1,244,772</td><td class="num">140,029</td><td>送金の67%が GDGII… へ（後述の第3ホップ追跡で扱う）</td></tr>
+<tr><td><span class="addr">GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F</span></td><td>通過型</td><td class="num">16,165</td><td class="num">7,603,294</td><td class="num">7,587,129</td><td class="num">1,244,772</td><td class="num">140,029</td><td>送金の67%が GDGII… へ（後述の、さらに先の追跡で扱う）</td></tr>
 <tr><td><span class="addr">GD24QVE4R42E4XRDF6T5IN6UAQLD2WN7OQGUC2FBHFUUZM7GLE4KG6YA</span></td><td>通過・単一集約型</td><td class="num">373</td><td class="num">46,307,778</td><td class="num">46,306,560</td><td class="num">0</td><td class="num">0</td><td>ほぼ全額を単一アドレス GDL66HS4YTUL… へ。ただしリスト由来は入金の約2.3%のみ</td></tr>
 </table></div>
 <h3>対象ごとの所見</h3>
@@ -215,25 +215,25 @@ img { max-width: 100%; }
 <li><span class="addrf">GAL4NDELSPS2O74224ZAWIDOTC7NR3EOTWYOT2P5AXGSQCRL7ZUNS7PX</span>：滞留ではない。111,391件の送金で6,771先へ分散し、リスト内ハブ GDGVILYX4RAT… へ28,729件・5,113,374 Pi を戻すなどリストとの循環が大きい。GANHBPJHHE6A… とも双方向の循環がある。なおこのアドレスは後に、pi chain mall の公式 X 投稿（2025-07-11）で PCM 自身の旧資金保管ウォレットとして公表された。入金の太宗を占める GDGVILYX4RAT… も PCM のウォレットであり（「2大ハブのアドレス帰属の根拠」の節）、ここで見た循環は PCM の自社ウォレット間の移動として整合する。ただし、公表されたラベルは個々のフローを誰が指示したかの証明にはならない。</li>
 <li><span class="addrf">GDIOBGWJZC7CZW32J3GAYUZGYGI5X3MK3O2W5KPF2OUPHCX3ZOYLLD24</span>：payment送金の99.96%が取引所宛（Gate.io関連 4,450,200 Pi／OKX 1,030,000 Pi）。ただし残高との間に約795万 Pi の不整合があり、/operations を確認したところ payments 対象外の create_claimable_balance 61件・claim 58件が存在する。この経由分が差の主因とみられ、全額が取引所へ出たとは断定できない。</li>
 <li><span class="addrf">GANHBPJHHE6A2TNFIXPNBO3YH3PUYPMR5ZPTHKXIKFPVXTWX5YIBRFRE</span>：入金の約54%が残高として滞留する一方、送金の大半は GAL4NDELSPS2… への循環（3,780,000 Pi）と Gate.io関連への出口（1,200,040 Pi）、リスト内ハブへの復帰（1,050,002 Pi）。純粋な終着点でも単なる通過点でもない。なおこのアドレスは、pi chain mall の公式 X 投稿（2025-07-11）で、GDGV…・GAL4… に代わる PCM の新しい資金保管ウォレットとして公表されたものである。残高の滞留と GAL4…（旧ウォレット）との往来は、このウォレット交代に伴う PCM 自社内の移動として整合する。</li>
-<li><span class="addrf">GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F</span>：残高は16,165 Piのみ。送金の67%は未知アドレス GDGII3Q2US4L… への 5,087,483 Pi で、後述の第3ホップ追跡で扱った。OKXへ 1,244,772 Pi、GCQH27CCPDZ… へ 1,100,000 Pi（GCQHとは相互送金）。</li>
+<li><span class="addrf">GCP3OIKPKX2YUZ4M6ESNL4K22D4AZZHE6TJFJ7RIVLZBMOVVB3AMIW5F</span>：残高は16,165 Piのみ。送金の67%は未知アドレス GDGII3Q2US4L… への 5,087,483 Pi で、後述の、さらに先の追跡で扱った。OKXへ 1,244,772 Pi、GCQH27CCPDZ… へ 1,100,000 Pi（GCQHとは相互送金）。</li>
 <li><span class="addrf">GD24QVE4R42E4XRDF6T5IN6UAQLD2WN7OQGUC2FBHFUUZM7GLE4KG6YA</span>：49,598の送付元から130,657件で集めた 46,307,778 Pi のほぼ全額を、単一の外部アドレス GDL66HS4YTUL… へ9,508件で送金。取引所宛・リスト復帰はゼロ。ただしリスト由来の入金は1,054,409 Pi（全体の約2.3%）のみで、入金元には取引所ウォレット自体も含まれるため、このアドレス自体はリストと関連の薄い大規模中継とみられる。</li>
 </ul>
 <p>結論として、主要2件（GCQH…、GAL4…）はいずれも溜め込みではなく、入った額とほぼ同額を多数の小口送金に分解して流す通過・分散の拠点だった。6件のうち大きな滞留があったのは GANH… のみで、GDIO… は取引所出口型だが claimable balance 由来の差のため断定には留保が付く。</p>
 
-<h3>第3ホップ（GDGII…）</h3>
-<p>前項の第2ホップ追跡で GCP3OIKPKX2Y… の最大の送り先だった未知アドレス <span class="addrf">GDGII3Q2US4L4NQSR3PYVXMLDEVGEIJA27A3LOFANWTLME2Q5IURFOFM</span> について、同様に全期間の payments を取得して追跡した（取得レコード 3,472件、HTTP 429 なし、上限到達なし）。</p>
+<h3>さらに先の追跡（GDGII…）</h3>
+<p>前項の「出口の先の追跡」で GCP3OIKPKX2Y… の最大の送り先だった未知アドレス <span class="addrf">GDGII3Q2US4L4NQSR3PYVXMLDEVGEIJA27A3LOFANWTLME2Q5IURFOFM</span> について、同様に全期間の payments を取得して追跡した（取得レコード 3,472件、HTTP 429 なし、上限到達なし）。</p>
 <ul>
 <li>入金総額：<strong>305,019,942 Pi</strong>（2,453件、送付元 359件）／送金総額：<strong>293,497,102 Pi</strong>（1,019件、宛先 74件）／現在残高：<strong>11,522,831 Pi</strong>（全入金の約3.8%）。</li>
 <li>取引所への送金：合計 <strong>260,627,120 Pi</strong>（送金の約88.8%）— OKX 223,162,807 Pi、Gate.io関連 28,681,952 Pi、Bitget 7,070,103 Pi、MEXC 1,712,258 Pi。</li>
 <li>最大の入金元は OKX 自体で、263,382,413 Pi（全入金の約86%）。取引所から受け取り、取引所へ送る双方向の大口ウォレットである。</li>
-<li>容疑リストからの直接入金は 0 Pi。GCP3OIKPKX2Y… からの 5,087,483 Pi は全入金の約1.7%にすぎない。リスト内への復帰送金は 9.95 Pi のみで、第2ホップの集約先への送金は 0 Pi。</li>
+<li>容疑リストからの直接入金は 0 Pi。GCP3OIKPKX2Y… からの 5,087,483 Pi は全入金の約1.7%にすぎない。リスト内への復帰送金は 9.95 Pi のみで、「出口の先の追跡」で扱った集約先への送金は 0 Pi。</li>
 <li>残高と（入金 − 送金）の差は −9.19 Pi のみで、送金件数に対する手数料の累積として整合する範囲。claimable balance のような大きな乖離はない。</li>
 </ul>
-<p>判定：GDGII… は容疑ネットワークの集約・終着点ではなく、取引所と双方向に大口の往来をする一般の大規模ウォレットである。GCP3 からの資金はこのはるかに大きな流れに混ざり、主に OKX へ出たとみるのが妥当であり、この枝は取引所で終端する。非取引所の最大の次段は GBDCL7MLFVDZ…（27,830,915 Pi、逆方向の入金もある双方向）だが、送金の約89%が取引所で終端するため、第4ホップを追う価値は低い。</p>
+<p>判定：GDGII… は容疑ネットワークの集約・終着点ではなく、取引所と双方向に大口の往来をする一般の大規模ウォレットである。GCP3 からの資金はこのはるかに大きな流れに混ざり、主に OKX へ出たとみるのが妥当であり、この枝は取引所で終端する。非取引所の最大の次段は GBDCL7MLFVDZ…（27,830,915 Pi、逆方向の入金もある双方向）だが、送金の約89%が取引所で終端するため、さらに先を追う価値は低い。</p>
 
 
-<h2>結果3：ハブへの流入の検証（被害者ホップ）</h2>
-<p>リスト作成の考え方では、抜き取り型の送金は「リスト外の被害者アドレス → リスト内のアドレス」というホップで発生する。そこで、リスト内の2大ハブである pi chain mall（<span class="addrf pcmaddr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span>）と teltlk（<span class="addrf teladdr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span>）について、<strong>リスト外</strong>の送り元全員にリスト作成者の元の3条件をそのまま適用し、ドレイン型の流入が実在するかを検証した。両ハブの全履歴を取得し（HTTP 429 なし、エラー 0、上限到達なし）、リスト外の送り元は重複を除いて 21,141 件、全件を走査した。</p>
+<h2>結果3：ハブへの流入の検証（被害者からの送金）</h2>
+<p>リスト作成の考え方では、抜き取り型の送金は、リスト外の被害者アドレスからリスト内のアドレスへの送金として現れる。そこで、リスト内の2大ハブである pi chain mall（<span class="addrf pcmaddr">GDGVILYX4RATPIO6XTBXNIBEUZXI3EBI36NJXKGO4DVJINYJ5X42WXHF</span>）と teltlk（<span class="addrf teladdr">GBU7PR3VSIWZGQZYOHP6KEUEBJPX4HYN6FMHDB5VQNJ2NNVCWU4D5ANE</span>）について、<strong>リスト外</strong>の送り元全員にリスト作成者の元の3条件をそのまま適用し、ドレイン型の流入が実在するかを検証した。両ハブの全履歴を取得し（HTTP 429 なし、エラー 0、上限到達なし）、リスト外の送り元は重複を除いて 21,141 件、全件を走査した。</p>
 <div class="note">
 <p><strong>位置づけの区別（重要）：</strong>この検証で条件に一致した送り元は、資金を抜き取られた側とみられる<strong>被害者候補</strong>であり、本レポートの対象である疑惑アドレス 8,132 件（抜き取りの受け取り側）とは正反対の立場である。<strong>疑惑リストへの追加ではない</strong>し、一致したアドレスを疑惑アドレスとして扱うものでもない。</p>
 </div>
@@ -268,7 +268,7 @@ img { max-width: 100%; }
 <ul>
 <li>本検証は全期間・全リスト外送り元を対象とした。これに対し元のリスト作成は、2023年の特定期間と「1,000 Pi 以上を送金したスパム候補」という別の入口条件で抽出している。期間も入口も異なるため、本結果は元のリスト作成を直接否定するものでも肯定するものでもない。特に pi chain mall のフルマッチは 2025 年以降に寄っており、元の2023年の抽出とは位相が違う。</li>
 <li>「販売代金ではない」という主張の根拠として使う場合も、この全期間スキャンではハブへの直接のドレインは量的に小さい、という留保が必要である。</li>
-<li>これはリスト内の送り元に対するドレイン型チェック（複合指標で両ハブとも 0%）とは別のホップの結果であり、混同しないこと。</li>
+<li>これはリスト内の送り元に対するドレイン型チェック（複合指標で両ハブとも 0%）とは別の区間の送金の結果であり、混同しないこと。</li>
 <li>チェーン上の資金移動は関与の可能性を示すだけで、人物の特定や盗みの断定にはならない。</li>
 </ul>
 </div>
@@ -281,7 +281,7 @@ img { max-width: 100%; }
 <li>つながりの集計では金額合計を出していない（資産種別を区別せず集計したため）。出口と追跡の金額は native（Pi）のみで集計している。</li>
 <li>出口スキャンは「リスト内→リスト外」の native 送金のみ。外部の第2段階の移動や、オープン化前のリスト外送金は含まない。</li>
 <li>流出総額には疑惑リスト内の通常利用者の売却等が混ざり得る。全額が不正資金という意味ではない。</li>
-<li>第2ホップ・第3ホップ追跡の金額は全期間の native 合計であり、出口スキャン（2025-02-20以降のみ）とは集計範囲が異なる。そのため第2ホップ・第3ホップ追跡での入金総額は、出口スキャンで各アドレスが受け取った額より大きくなる。</li>
+<li>出口の先と、さらに先の追跡の金額は全期間の native 合計であり、出口スキャン（2025-02-20以降のみ）とは集計範囲が異なる。そのため、それらの追跡での入金総額は、出口スキャンで各アドレスが受け取った額より大きくなる。</li>
 <li>GDIO… については、payments の集計（入金 13,433,254 Pi、payment 送金 5,482,504 Pi）と現在残高（749 Pi）の間に約795万 Pi の差がある。/operations で確認した claimable balance 操作（作成61件・請求58件）が主因とみられるが、この経路を通った資金の最終的な行き先までは payments の記録からは追えない。</li>
 <li>オンチェーンの資金流だけでは、保有者の特定や窃盗の事実を断定することはできない。本レポートは資金のつながりと行き先の可能性を示すものである。</li>
 </ul>
